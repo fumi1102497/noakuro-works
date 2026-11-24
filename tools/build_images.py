@@ -37,6 +37,12 @@ ALBUMS = {"cabinet"}
 # WebPだと表示されないサービスがあるので、これだけJPEGで書き出す。
 # 写真を変えるときは img(メーカー別)/HP/og.jpg を差し替える。
 # OG_FOCUS は縦のどこを残すか。0=上端 / 0.5=中央 / 1=下端
+# 切り抜いてから使うサイト用の写真。値は (横÷縦 の比, 縦のどこを残すか)。
+# 縦は 0=上端 / 0.5=中央 / 1=下端。切り抜き位置を変えたらこの数字を直して
+# 出力（images/site/*.webp）を消してから build_images.py を実行する
+# （出力のほうが新しいと変換がスキップされるため）。
+SITE_CROP = {"HP/color.jpg": (3.5, 0.635)}   # カラー見本：上下の引き出しを落として横長に
+
 OG_SRC, OG_OUT = "HP/og.jpg", "og.jpg"
 OG_SIZE, OG_FOCUS, OG_Q = (1200, 630), 0.33, 85
 
@@ -202,18 +208,23 @@ def save(im, path, q):
     os.replace(tmp, path)
 
 
-def crop_to(im, size, focus):
-    """size の比率に合わせて切り抜いてから size ぴったりに縮める。"""
+def crop_ar(im, ar, focus):
+    """ar（横÷縦）の比に合わせて切り抜く（縮小はしない）。
+    左右は中央で、上下は focus の位置を残す（0=上端 / 0.5=中央 / 1=下端）。"""
     w, h = im.size
-    tw, th = size
-    ar = tw / th
     if w / h > ar:
         cw, ch = round(h * ar), h   # 横長すぎる → 左右を削る
     else:
         cw, ch = w, round(w / ar)   # 縦長すぎる → 上下を削る
     x = (w - cw) // 2
     y = round((h - ch) * focus)
-    return im.crop((x, y, x + cw, y + ch)).resize(size, Image.LANCZOS)
+    return im.crop((x, y, x + cw, y + ch))
+
+
+def crop_to(im, size, focus):
+    """size の比率に合わせて切り抜いてから size ぴったりに縮める。"""
+    tw, th = size
+    return crop_ar(im, tw / th, focus).resize(size, Image.LANCZOS)
 
 
 def save_jpg(im, path, q):
@@ -244,8 +255,9 @@ def build_og(state):
     return True
 
 
-def convert(src, outs, state):
-    """outs = [(出力パス, 長辺, 品質), ...]。更新が要るときだけ変換する。"""
+def convert(src, outs, state, crop=None):
+    """outs = [(出力パス, 長辺, 品質), ...]。更新が要るときだけ変換する。
+    crop = (横÷縦の比, 縦の残す位置) を渡すと、縮める前に切り抜く。"""
     if not FORCE and all(os.path.exists(p) and os.path.getmtime(p) >= os.path.getmtime(src)
                          for p, _, _ in outs):
         state["skipped"] += 1
@@ -257,6 +269,8 @@ def convert(src, outs, state):
             im = im.convert("RGB")
         if orient not in (1, 0, None):
             state["rotated"].append("%s (Orientation=%s)" % (os.path.relpath(src, SRC), orient))
+        if crop:
+            im = crop_ar(im, crop[0], crop[1])
         for path, edge, q in outs:
             save(fit(im, edge), path, q)
     state["done"] += 1
@@ -295,7 +309,7 @@ def main():
         outs = [(os.path.join(DST, sp["out"].replace("/", os.sep)), MAIN_EDGE, MAIN_Q)]
         if sp["thumb"]:
             outs.append((os.path.join(DST, sp["thumb"].replace("/", os.sep)), THUMB_EDGE, THUMB_Q))
-        convert(src, outs, state)
+        convert(src, outs, state, SITE_CROP.get("%s/%s" % (sp["folder"], sp["file"])))
         if sp["album"]:
             albums[sp["album"]] = albums.get(sp["album"], 0) + 1
     # そのフォルダから消えた写真の出力を掃除
