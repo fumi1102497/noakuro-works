@@ -23,6 +23,7 @@ MAKER_ORDER = [
 CATEGORIES = [
     ("all",       "すべて"),
     ("ratchet",   "ラチェットハンドル"),
+    ("breaker",   "ブレーカーバー"),
     ("extension", "エクステンションバー"),
     ("socket",    "ソケット"),
     ("driver",    "ドライバー"),

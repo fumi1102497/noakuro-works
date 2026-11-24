@@ -10,41 +10,41 @@
 | # | 作品名 | 対応 | カテゴリ | 状態 | 枚数 | ID | 原本フォルダ |
 |---|---|---|---|---|---|---|---|
 | 1 | クイックスピンナホルダー | Snap-on TMS70A / FRS70A / LRS70A | ラチェットハンドル | 販売中 | 4 | `snapon-quick-spinner` | `クイックスピンナ` |
-| 2 | ブレーカーバーホルダー 450mm | Snap-on F18LA ほか 3/8 ブレーカーバー | ラチェットハンドル | 販売中 | 7 | `snapon-breaker-bar` | `ブレーカーバー` |
-| 3 | スライディングT型ハンドル／ラチェットアダプターホルダー | Snap-on F67B / F77 / F77A / F5L | ラチェットハンドル | 販売中 | 5 | `snapon-ratchet-adapter-f77-f5l` | `ラチェットアダプター/F77＋F5L` |
-| 4 | スライディングT型ハンドル／ラチェットアダプターホルダー | Snap-on TM67A / TM5 | ラチェットハンドル | 販売中 | 4 | `snapon-ratchet-adapter-tm67a-tm5` | `ラチェットアダプター/TM67A＋TM5` |
-| 5 | ラチェットドライバーホルダー | Snap-on SGDMRC11 | ラチェットハンドル | 販売中 | 5 | `snapon-ratchet-driver-sgdmrc11` | `ラチェットドライバー/SGDMRC11` |
-| 6 | ラチェットドライバーホルダー 2本用 | Snap-on SGDMRC11 / SGDMRC44 | ラチェットハンドル | 販売中 | 4 | `snapon-ratchet-driver-sgdmrc11-44` | `ラチェットドライバー/SGDMRC11_44` |
-| 7 | ラチェットドライバーホルダー | Snap-on SGDMRC44 | ラチェットハンドル | 販売中 | 8 | `snapon-ratchet-driver-sgdmrc44` | `ラチェットドライバー/SGDMRC44` |
-| 8 | 汎用ラチェットホルダー 3本用 | Snap-on ラチェットハンドル 1/4・3/8・1/2 | ラチェットハンドル | 販売中 | 8 | `snapon-ratchet-handle-6-3-9-5-12-7sq` | `ラチェットハンドル/6.3_9.5_12.7sq` |
-| 9 | 汎用ラチェットホルダー | Snap-on F100 / FKF100 / FK100 | ラチェットハンドル | 販売中 | 9 | `snapon-ratchet-handle-f100-fkf10-fk100` | `ラチェットハンドル/F100_FKF10_ FK100` |
-| 10 | 汎用ラチェットホルダー | Snap-on FHFD80A | ラチェットハンドル | 販売中 | 8 | `snapon-ratchet-handle-fhfd80a` | `ラチェットハンドル/FHFD80A` |
-| 11 | 汎用ラチェットホルダー 幅広 | Snap-on FHKFD80 / FHFD80A | ラチェットハンドル | 販売中 | 6 | `snapon-ratchet-handle-fhkfd80-fhfd80a-wide` | `ラチェットハンドル/FHKFD80_FHFD80A/幅広` |
-| 12 | 汎用ラチェットホルダー 幅狭 | Snap-on FHKFD80 / FHFD80A | ラチェットハンドル | 販売中 | 6 | `snapon-ratchet-handle-fhkfd80-fhfd80a-narrow` | `ラチェットハンドル/FHKFD80_FHFD80A/幅狭` |
-| 13 | ラチェットホルダー | Snap-on FK80 | ラチェットハンドル | 販売中 | 7 | `snapon-ratchet-handle-fk80` | `ラチェットハンドル/FK80` |
-| 14 | 汎用ラチェットホルダー | Snap-on T936 / FC72 / FCF72 | ラチェットハンドル | 販売中 | 8 | `snapon-ratchet-handle-t936-fc72-fcf72` | `ラチェットハンドル/T936_FC72_FCF72` |
-| 15 | 汎用ラチェットホルダー 1/4 幅狭 | Snap-on TK72 / TKF72 / T72 | ラチェットハンドル | 販売中 | 6 | `snapon-ratchet-handle-tk72-tkf72-t72` | `ラチェットハンドル/TK72_TKF72_T72` |
-| 16 | エクストラロングラチェットホルダー | Snap-on FLL80 / FLLF80（3/8） | ラチェットハンドル | 販売中 | 5 | `snapon-ratchet-handle-extra-long` | `ラチェットハンドル/エクストラロング` |
-| 17 | ラチェットホルダー | Snap-on FZ80（3/8） | ラチェットハンドル | 販売中 | 5 | `snapon-ratchet-handle-multi-purpose` | `ラチェットハンドル/マルチパーパス` |
-| 18 | マルチポジションラチェットホルダー | Snap-on マルチポジションラチェット | ラチェットハンドル | 販売中 | 7 | `snapon-ratchet-handle-multi-position` | `ラチェットハンドル/マルチポジション` |
-| 19 | エクステンションバーホルダー 1/2sq | Snap-on 305ASX / 305ASXW | エクステンションバー | 販売中 | 8 | `snapon-extension-bar-12-7sq` | `エクステンションバー/12.7sq` |
-| 20 | エクステンションバーホルダー 1/4sq | Snap-on 106BTMX / 106ATMXW / 106ATMXWP | エクステンションバー | 販売中 | 8 | `snapon-extension-bar-6-3sq` | `エクステンションバー/6.3sq` |
-| 21 | ロッキングエクステンションバーホルダー 3/8sq | Snap-on 203FXWKL | エクステンションバー | 販売中 | 7 | `snapon-extension-bar-9-5sq-locking` | `エクステンションバー/9.5sq/locking` |
-| 22 | エクステンションバーホルダー 3/8sq イエロー | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-yellow` | `エクステンションバー/9.5sq/イエロー` |
-| 23 | エクステンションバーホルダー 3/8sq オレンジ | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-orange` | `エクステンションバー/9.5sq/オレンジ` |
-| 24 | エクステンションバーホルダー 3/8sq グリーン | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-green` | `エクステンションバー/9.5sq/グリーン` |
-| 25 | エクステンションバーホルダー 3/8sq パープル | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-purple` | `エクステンションバー/9.5sq/パープル` |
-| 26 | エクステンションバーホルダー 3/8sq ブラック | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 3 | `snapon-extension-bar-9-5sq-black` | `エクステンションバー/9.5sq/ブラック` |
-| 27 | エクステンションバーホルダー 3/8sq レッド | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 5 | `snapon-extension-bar-9-5sq-red` | `エクステンションバー/9.5sq/レッド` |
-| 28 | ソケットホルダー 3/8 セミディープ | Snap-on 212FSMSY | ソケット | 販売中 | 8 | `snapon-socket-holder-212fsmsy` | `スナップオン＿ソケットホルダー/212FSMSY` |
-| 29 | ソケットホルダー 3/8 | Snap-on 212FSMY | ソケット | 販売中 | 6 | `snapon-socket-holder-212fsmy` | `スナップオン＿ソケットホルダー/212FSMY` |
-| 30 | ソケットホルダー 台形タイプ | Snap-on 212YFSMY | ソケット | 販売中 | 5 | `snapon-socket-holder-fdx-212yfsmy` | `スナップオン＿ソケットホルダー/FDX_212YFSMY` |
-| 31 | 専用設計ソケットホルダー シャロー／セミディープ／ディープ | Snap-on 212SFSMY / 212FSMSY / 212FSMY / 212YSFSMY / 212YFSMSY / 212YFSMY | ソケット | 販売中 | 7 | `snapon-socket-holder-shallow-semideep-deep` | `スナップオン＿ソケットホルダー/シャロー、セミディープ、ディープ` |
-| 32 | ドライバーホルダー | Snap-on SDDX70A | ドライバー | 販売中 | 7 | `snapon-driver-sddx70a` | `ドライバー/SDDX70A` |
-| 33 | ドライバー ツールトレー | Snap-on SGDX40 | ドライバー | 販売中 | 5 | `snapon-driver-sgdx40` | `ドライバー/SGDX40` |
-| 34 | ドライバーホルダー | Snap-on SGDX60 | ドライバー | 販売中 | 5 | `snapon-driver-sgdx60` | `ドライバー/SGDX60` |
-| 35 | ドライバーホルダー | Snap-on SGDX80 | ドライバー | 販売中 | 4 | `snapon-driver-sgdx80` | `ドライバー/SGDX80` |
-| 36 | トルクスドライバー ツールトレー | Snap-on SGTX40 | ドライバー | 販売中 | 7 | `snapon-driver-sgtx40` | `ドライバー/SGTX40` |
+| 2 | 汎用ラチェットホルダー 3本用 | Snap-on ラチェットハンドル 1/4・3/8・1/2 | ラチェットハンドル | 販売中 | 8 | `snapon-ratchet-handle-6-3-9-5-12-7sq` | `ラチェットハンドル/6.3_9.5_12.7sq` |
+| 3 | 汎用ラチェットホルダー | Snap-on F100 / FKF100 / FK100 | ラチェットハンドル | 販売中 | 9 | `snapon-ratchet-handle-f100-fkf10-fk100` | `ラチェットハンドル/F100_FKF10_ FK100` |
+| 4 | 汎用ラチェットホルダー | Snap-on FHFD80A | ラチェットハンドル | 販売中 | 8 | `snapon-ratchet-handle-fhfd80a` | `ラチェットハンドル/FHFD80A` |
+| 5 | 汎用ラチェットホルダー 幅広 | Snap-on FHKFD80 / FHFD80A | ラチェットハンドル | 販売中 | 6 | `snapon-ratchet-handle-fhkfd80-fhfd80a-wide` | `ラチェットハンドル/FHKFD80_FHFD80A/幅広` |
+| 6 | 汎用ラチェットホルダー 幅狭 | Snap-on FHKFD80 / FHFD80A | ラチェットハンドル | 販売中 | 6 | `snapon-ratchet-handle-fhkfd80-fhfd80a-narrow` | `ラチェットハンドル/FHKFD80_FHFD80A/幅狭` |
+| 7 | ラチェットホルダー | Snap-on FK80 | ラチェットハンドル | 販売中 | 7 | `snapon-ratchet-handle-fk80` | `ラチェットハンドル/FK80` |
+| 8 | 汎用ラチェットホルダー | Snap-on T936 / FC72 / FCF72 | ラチェットハンドル | 販売中 | 8 | `snapon-ratchet-handle-t936-fc72-fcf72` | `ラチェットハンドル/T936_FC72_FCF72` |
+| 9 | 汎用ラチェットホルダー 1/4 幅狭 | Snap-on TK72 / TKF72 / T72 | ラチェットハンドル | 販売中 | 6 | `snapon-ratchet-handle-tk72-tkf72-t72` | `ラチェットハンドル/TK72_TKF72_T72` |
+| 10 | エクストラロングラチェットホルダー | Snap-on FLL80 / FLLF80（3/8） | ラチェットハンドル | 販売中 | 5 | `snapon-ratchet-handle-extra-long` | `ラチェットハンドル/エクストラロング` |
+| 11 | ラチェットホルダー | Snap-on FZ80（3/8） | ラチェットハンドル | 販売中 | 5 | `snapon-ratchet-handle-multi-purpose` | `ラチェットハンドル/マルチパーパス` |
+| 12 | マルチポジションラチェットホルダー | Snap-on マルチポジションラチェット | ラチェットハンドル | 販売中 | 7 | `snapon-ratchet-handle-multi-position` | `ラチェットハンドル/マルチポジション` |
+| 13 | ブレーカーバーホルダー 450mm | Snap-on F18LA ほか 3/8 ブレーカーバー | ブレーカーバー | 販売中 | 7 | `snapon-breaker-bar` | `ブレーカーバー` |
+| 14 | エクステンションバーホルダー 1/2sq | Snap-on 305ASX / 305ASXW | エクステンションバー | 販売中 | 8 | `snapon-extension-bar-12-7sq` | `エクステンションバー/12.7sq` |
+| 15 | エクステンションバーホルダー 1/4sq | Snap-on 106BTMX / 106ATMXW / 106ATMXWP | エクステンションバー | 販売中 | 8 | `snapon-extension-bar-6-3sq` | `エクステンションバー/6.3sq` |
+| 16 | ロッキングエクステンションバーホルダー 3/8sq | Snap-on 203FXWKL | エクステンションバー | 販売中 | 7 | `snapon-extension-bar-9-5sq-locking` | `エクステンションバー/9.5sq/locking` |
+| 17 | エクステンションバーホルダー 3/8sq イエロー | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-yellow` | `エクステンションバー/9.5sq/イエロー` |
+| 18 | エクステンションバーホルダー 3/8sq オレンジ | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-orange` | `エクステンションバー/9.5sq/オレンジ` |
+| 19 | エクステンションバーホルダー 3/8sq グリーン | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-green` | `エクステンションバー/9.5sq/グリーン` |
+| 20 | エクステンションバーホルダー 3/8sq パープル | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-purple` | `エクステンションバー/9.5sq/パープル` |
+| 21 | エクステンションバーホルダー 3/8sq ブラック | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 3 | `snapon-extension-bar-9-5sq-black` | `エクステンションバー/9.5sq/ブラック` |
+| 22 | エクステンションバーホルダー 3/8sq レッド | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 5 | `snapon-extension-bar-9-5sq-red` | `エクステンションバー/9.5sq/レッド` |
+| 23 | ソケットホルダー 3/8 セミディープ | Snap-on 212FSMSY | ソケット | 販売中 | 8 | `snapon-socket-holder-212fsmsy` | `スナップオン＿ソケットホルダー/212FSMSY` |
+| 24 | ソケットホルダー 3/8 | Snap-on 212FSMY | ソケット | 販売中 | 6 | `snapon-socket-holder-212fsmy` | `スナップオン＿ソケットホルダー/212FSMY` |
+| 25 | ソケットホルダー 台形タイプ | Snap-on 212YFSMY | ソケット | 販売中 | 5 | `snapon-socket-holder-fdx-212yfsmy` | `スナップオン＿ソケットホルダー/FDX_212YFSMY` |
+| 26 | 専用設計ソケットホルダー シャロー／セミディープ／ディープ | Snap-on 212SFSMY / 212FSMSY / 212FSMY / 212YSFSMY / 212YFSMSY / 212YFSMY | ソケット | 販売中 | 7 | `snapon-socket-holder-shallow-semideep-deep` | `スナップオン＿ソケットホルダー/シャロー、セミディープ、ディープ` |
+| 27 | ドライバーホルダー | Snap-on SDDX70A | ドライバー | 販売中 | 7 | `snapon-driver-sddx70a` | `ドライバー/SDDX70A` |
+| 28 | ドライバー ツールトレー | Snap-on SGDX40 | ドライバー | 販売中 | 5 | `snapon-driver-sgdx40` | `ドライバー/SGDX40` |
+| 29 | ドライバーホルダー | Snap-on SGDX60 | ドライバー | 販売中 | 5 | `snapon-driver-sgdx60` | `ドライバー/SGDX60` |
+| 30 | ドライバーホルダー | Snap-on SGDX80 | ドライバー | 販売中 | 4 | `snapon-driver-sgdx80` | `ドライバー/SGDX80` |
+| 31 | トルクスドライバー ツールトレー | Snap-on SGTX40 | ドライバー | 販売中 | 7 | `snapon-driver-sgtx40` | `ドライバー/SGTX40` |
+| 32 | ラチェットドライバーホルダー | Snap-on SGDMRC11 | ドライバー | 販売中 | 5 | `snapon-ratchet-driver-sgdmrc11` | `ラチェットドライバー/SGDMRC11` |
+| 33 | ラチェットドライバーホルダー 2本用 | Snap-on SGDMRC11 / SGDMRC44 | ドライバー | 販売中 | 4 | `snapon-ratchet-driver-sgdmrc11-44` | `ラチェットドライバー/SGDMRC11_44` |
+| 34 | ラチェットドライバーホルダー | Snap-on SGDMRC44 | ドライバー | 販売中 | 8 | `snapon-ratchet-driver-sgdmrc44` | `ラチェットドライバー/SGDMRC44` |
+| 35 | スライディングT型ハンドル／ラチェットアダプターホルダー | Snap-on F67B / F77 / F77A / F5L | レンチ | 販売中 | 5 | `snapon-ratchet-adapter-f77-f5l` | `ラチェットアダプター/F77＋F5L` |
+| 36 | スライディングT型ハンドル／ラチェットアダプターホルダー | Snap-on TM67A / TM5 | レンチ | 販売中 | 4 | `snapon-ratchet-adapter-tm67a-tm5` | `ラチェットアダプター/TM67A＋TM5` |
 | 37 | 汎用レンチホルダー | Snap-on コンビネーションレンチ | レンチ | 販売中 | 8 | `snapon-wrench` | `レンチ` |
 | 38 | デジタルトルクレンチホルダー | Snap-on デジタルトルクレンチ | トルクレンチ | 販売中 | 6 | `snapon-digital-torque-wrench` | `デジタルトルクレンチ` |
 | 39 | トルクレンチホルダー | Snap-on QD3RN100 / QD3RN200 / QD3RN350 | トルクレンチ | 販売中 | 9 | `snapon-torque-wrench` | `トルクレンチ` |
@@ -63,19 +63,19 @@
 
 | # | 作品名 | 対応 | カテゴリ | 状態 | 枚数 | ID | 原本フォルダ |
 |---|---|---|---|---|---|---|---|
-| 50 | T型スライドスピンハンドルホルダー | Ko-ken 3715SLK | ラチェットハンドル | 販売中 | 4 | `koken-t-slide-spin-handle-3715slk` | `T型スライドスピンハンドル/3715SLK` |
-| 51 | デュアルドライブT型ハンドルホルダー | Ko-ken 2716WC / 3716WC | ラチェットハンドル | 販売中 | 4 | `koken-dual-drive-t-handle-2716wc-3716wc` | `デュアルドライブT型ハンドル/2716WC 3716WC` |
-| 52 | 汎用ブレーカーバーホルダー | ブレーカーバー 300 / 450 / 600mm（1/4・3/8・1/2） | ラチェットハンドル | 販売中 | 9 | `koken-breaker-bar` | `ブレーカーバー` |
-| 53 | 汎用ラチェットホルダー | Ko-ken 3725Z / 3725ZS / 3726ZS | ラチェットハンドル | 販売中 | 7 | `koken-ratchet-handle` | `ラチェットハンドル` |
-| 54 | Z-EAL エクステンションバーホルダー | Ko-ken Z-EAL 3760Z / 2760Z | エクステンションバー | 販売中 | 3 | `koken-extension-bar-3760z-2760z` | `エクステンションバー/3760Z_2760Z` |
-| 55 | ロッキングエクステンションバーホルダー | Ko-ken 3763L | エクステンションバー | 販売中 | 4 | `koken-extension-bar-3763l` | `エクステンションバー/3763L` |
-| 56 | エクステンションバーホルダー | Ko-ken PK2760/6 ・ PK2763/6 | エクステンションバー | 販売中 | 5 | `koken-extension-bar-pk2760-pk2763` | `エクステンションバー/PK2760_PK2763` |
-| 57 | エクステンションバーホルダー | Ko-ken PK3760/6 ・ PK3763/6 | エクステンションバー | 販売中 | 3 | `koken-extension-bar-pk3760-pk3763` | `エクステンションバー/PK3760_PK3763` |
-| 58 | インパクトソケットホルダー | Ko-ken インパクトソケット 17 / 19 / 21mm | ソケット | 販売中 | 2 | `koken-impact-socket` | `インパクトソケット` |
-| 59 | ソケットホルダー エクストラディープ | Ko-ken エクストラディープソケット | ソケット | 販売中 | 4 | `koken-socket-extra-deep` | `ソケット（エクストラディープ）` |
-| 60 | ナットグリップ ソケットホルダー | Ko-ken ナットグリップソケット | ソケット | 販売中 | 4 | `koken-nut-grip` | `ナットグリップ` |
-| 61 | ナットグリップ ソケットホルダー エクストラディープ | Ko-ken ナットグリップ エクストラディープソケット | ソケット | 販売中 | 4 | `koken-nut-grip-extra-deep` | `ナットグリップ（エクストラディープ）` |
-| 62 | Z-EAL ヘックスビットソケットホルダー | Ko-ken Z-EAL ヘックスビットソケット | ソケット | 販売中 | 3 | `koken-hex-bit` | `ヘックスビット` |
+| 50 | 汎用ラチェットホルダー | Ko-ken 3725Z / 3725ZS / 3726ZS | ラチェットハンドル | 販売中 | 7 | `koken-ratchet-handle` | `ラチェットハンドル` |
+| 51 | 汎用ブレーカーバーホルダー | ブレーカーバー 300 / 450 / 600mm（1/4・3/8・1/2） | ブレーカーバー | 販売中 | 9 | `koken-breaker-bar` | `ブレーカーバー` |
+| 52 | Z-EAL エクステンションバーホルダー | Ko-ken Z-EAL 3760Z / 2760Z | エクステンションバー | 販売中 | 3 | `koken-extension-bar-3760z-2760z` | `エクステンションバー/3760Z_2760Z` |
+| 53 | ロッキングエクステンションバーホルダー | Ko-ken 3763L | エクステンションバー | 販売中 | 4 | `koken-extension-bar-3763l` | `エクステンションバー/3763L` |
+| 54 | エクステンションバーホルダー | Ko-ken PK2760/6 ・ PK2763/6 | エクステンションバー | 販売中 | 5 | `koken-extension-bar-pk2760-pk2763` | `エクステンションバー/PK2760_PK2763` |
+| 55 | エクステンションバーホルダー | Ko-ken PK3760/6 ・ PK3763/6 | エクステンションバー | 販売中 | 3 | `koken-extension-bar-pk3760-pk3763` | `エクステンションバー/PK3760_PK3763` |
+| 56 | インパクトソケットホルダー | Ko-ken インパクトソケット 17 / 19 / 21mm | ソケット | 販売中 | 2 | `koken-impact-socket` | `インパクトソケット` |
+| 57 | ソケットホルダー エクストラディープ | Ko-ken エクストラディープソケット | ソケット | 販売中 | 4 | `koken-socket-extra-deep` | `ソケット（エクストラディープ）` |
+| 58 | ナットグリップ ソケットホルダー | Ko-ken ナットグリップソケット | ソケット | 販売中 | 4 | `koken-nut-grip` | `ナットグリップ` |
+| 59 | ナットグリップ ソケットホルダー エクストラディープ | Ko-ken ナットグリップ エクストラディープソケット | ソケット | 販売中 | 4 | `koken-nut-grip-extra-deep` | `ナットグリップ（エクストラディープ）` |
+| 60 | Z-EAL ヘックスビットソケットホルダー | Ko-ken Z-EAL ヘックスビットソケット | ソケット | 販売中 | 3 | `koken-hex-bit` | `ヘックスビット` |
+| 61 | T型スライドスピンハンドルホルダー | Ko-ken 3715SLK | レンチ | 販売中 | 4 | `koken-t-slide-spin-handle-3715slk` | `T型スライドスピンハンドル/3715SLK` |
+| 62 | デュアルドライブT型ハンドルホルダー | Ko-ken 2716WC / 3716WC | レンチ | 販売中 | 4 | `koken-dual-drive-t-handle-2716wc-3716wc` | `デュアルドライブT型ハンドル/2716WC 3716WC` |
 | 63 | フリーターンクロスレンチホルダー | Ko-ken 4711X | レンチ | 販売中 | 5 | `koken-free-turn-cross-wrench-4711x` | `フリーターンクロスレンチ/4711X` |
 
 ## KTC
@@ -94,11 +94,11 @@
 |---|---|---|---|---|---|---|---|
 | 69 | クイックスピンナホルダー | NEPROS NBE28 / NBE38 / NBEC38 / NBE48 | ラチェットハンドル | 販売中 | 5 | `nepros-quick-spinner` | `クイックスピンナ` |
 | 70 | スライドハンドルホルダー | NEPROS NBHM2 | ラチェットハンドル | 販売中 | 4 | `nepros-slide-head-handle` | `スライドヘッドハンドル` |
-| 71 | スライディングT型ハンドル／ラチェットアダプターホルダー | NEPROS NBRA3 / NBHM3 | ラチェットハンドル | 販売中 | 5 | `nepros-ratchet-adapter` | `ラチェットアダプター` |
-| 72 | 汎用ラチェットホルダー | NEPROS NBR390F / NBR390 / NBR390S | ラチェットハンドル | 販売中 | 7 | `nepros-ratchet-handle` | `ラチェットハンドル` |
-| 73 | エクステンションバーホルダー | NEPROS NTBE306 / NTBE204 | エクステンションバー | 販売中 | 5 | `nepros-extension-bar` | `エクステンションバー` |
-| 74 | プラグレンチホルダー | NEPROS プラグレンチ | レンチ | 販売中 | 4 | `nepros-plug-wrench` | `プラグレンチ` |
-| 75 | プラグレンチホルダー 加工版 | NEPROS プラグレンチ | レンチ | 販売中 | 5 | `nepros-plug-wrench-mod` | `プラグレンチ/加工` |
+| 71 | 汎用ラチェットホルダー | NEPROS NBR390F / NBR390 / NBR390S | ラチェットハンドル | 販売中 | 7 | `nepros-ratchet-handle` | `ラチェットハンドル` |
+| 72 | エクステンションバーホルダー | NEPROS NTBE306 / NTBE204 | エクステンションバー | 販売中 | 5 | `nepros-extension-bar` | `エクステンションバー` |
+| 73 | プラグレンチホルダー | NEPROS プラグレンチ | レンチ | 販売中 | 4 | `nepros-plug-wrench` | `プラグレンチ` |
+| 74 | プラグレンチホルダー 加工版 | NEPROS プラグレンチ | レンチ | 販売中 | 5 | `nepros-plug-wrench-mod` | `プラグレンチ/加工` |
+| 75 | スライディングT型ハンドル／ラチェットアダプターホルダー | NEPROS NBRA3 / NBHM3 | レンチ | 販売中 | 5 | `nepros-ratchet-adapter` | `ラチェットアダプター` |
 | 76 | 汎用レンチホルダー | NEPROS コンビネーションレンチ | レンチ | 販売中 | 8 | `nepros-wrench` | `レンチ` |
 
 ## PB SWISS TOOLS
@@ -146,8 +146,8 @@
 
 | # | 作品名 | 対応 | カテゴリ | 状態 | 枚数 | ID | 原本フォルダ |
 |---|---|---|---|---|---|---|---|
-| 93 | ラチェットドライバーホルダー | VESSEL ラチェットドライバー | ラチェットハンドル | 販売中 | 5 | `vessel-ratchet-driver` | `ラチェットドライバー` |
-| 94 | 電動ラチェットホルダー | VESSEL 電動ラチェット | ラチェットハンドル | 販売中 | 7 | `vessel-power-ratchet` | `電動ラチェット` |
+| 93 | 電動ラチェットホルダー | VESSEL 電動ラチェット | ラチェットハンドル | 販売中 | 7 | `vessel-power-ratchet` | `電動ラチェット` |
+| 94 | ラチェットドライバーホルダー | VESSEL ラチェットドライバー | ドライバー | 販売中 | 5 | `vessel-ratchet-driver` | `ラチェットドライバー` |
 
 ## ViGOR
 
