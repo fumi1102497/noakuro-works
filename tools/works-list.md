@@ -9,7 +9,7 @@
 
 | # | 作品名 | 対応 | カテゴリ | 状態 | 枚数 | ID | 原本フォルダ |
 |---|---|---|---|---|---|---|---|
-| 1 | 精密やすりホルダー | Snap-on HBFN120B | ハンドツール | 販売中 | 5 | `snapon-file` | `やすり` |
+| 1 | 精密やすりホルダー | Snap-on HBFN120B | その他 | 販売中 | 5 | `snapon-file` | `やすり` |
 | 2 | エクステンションバーホルダー 1/2sq | Snap-on 305ASX / 305ASXW | エクステンションバー | 販売中 | 8 | `snapon-extension-bar-12-7sq` | `エクステンションバー/12.7sq` |
 | 3 | エクステンションバーホルダー 1/4sq | Snap-on 106BTMX / 106ATMXW / 106ATMXWP | エクステンションバー | 販売中 | 8 | `snapon-extension-bar-6-3sq` | `エクステンションバー/6.3sq` |
 | 4 | ロッキングエクステンションバーホルダー 3/8sq | Snap-on 203FXWKL | エクステンションバー | 販売中 | 7 | `snapon-extension-bar-9-5sq-locking` | `エクステンションバー/9.5sq/locking` |
@@ -20,7 +20,7 @@
 | 9 | エクステンションバーホルダー 3/8sq ブラック | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 3 | `snapon-extension-bar-9-5sq-black` | `エクステンションバー/9.5sq/ブラック` |
 | 10 | エクステンションバーホルダー 3/8sq レッド | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 5 | `snapon-extension-bar-9-5sq-red` | `エクステンションバー/9.5sq/レッド` |
 | 11 | クイックスピンナホルダー | Snap-on TMS70A / FRS70A / LRS70A | ラチェットハンドル | 販売中 | 4 | `snapon-quick-spinner` | `クイックスピンナ` |
-| 12 | シールリムーバー ツールトレー | Snap-on SGSR104A | ハンドツール | 販売中 | 5 | `snapon-seal-remover-sgsr104a` | `スナップオン＿シールリムーバー/SGSR104A` |
+| 12 | シールリムーバー ツールトレー | Snap-on SGSR104A | その他 | 販売中 | 5 | `snapon-seal-remover-sgsr104a` | `スナップオン＿シールリムーバー/SGSR104A` |
 | 13 | ソケットホルダー 3/8 セミディープ | Snap-on 212FSMSY | ソケット | 販売中 | 8 | `snapon-socket-holder-212fsmsy` | `スナップオン＿ソケットホルダー/212FSMSY` |
 | 14 | ソケットホルダー 3/8 | Snap-on 212FSMY | ソケット | 販売中 | 6 | `snapon-socket-holder-212fsmy` | `スナップオン＿ソケットホルダー/212FSMY` |
 | 15 | ソケットホルダー 台形タイプ | Snap-on 212YFSMY | ソケット | 販売中 | 5 | `snapon-socket-holder-fdx-212yfsmy` | `スナップオン＿ソケットホルダー/FDX_212YFSMY` |
@@ -32,14 +32,14 @@
 | 21 | ドライバーホルダー | Snap-on SGDX60 | ドライバー | 販売中 | 5 | `snapon-driver-sgdx60` | `ドライバー/SGDX60` |
 | 22 | ドライバーホルダー | Snap-on SGDX80 | ドライバー | 販売中 | 4 | `snapon-driver-sgdx80` | `ドライバー/SGDX80` |
 | 23 | トルクスドライバー ツールトレー | Snap-on SGTX40 | ドライバー | 販売中 | 7 | `snapon-driver-sgtx40` | `ドライバー/SGTX40` |
-| 24 | ネジ山修正キットホルダー | Snap-on RTD15M | ハンドツール | 販売中 | 9 | `snapon-thread-repair-tool` | `ネジ山修正ツール` |
-| 25 | ハンドソーホルダー | Snap-on HS50 | ハンドツール | 販売中 | 7 | `snapon-hand-saw` | `ハンドソー` |
-| 26 | ピックツール ツールトレー | Snap-on ASA204B | ハンドツール | 販売中 | 6 | `snapon-pick-tool-asa204b` | `ピックツール/ASA204B` |
-| 27 | ピックツール ツールトレー | Snap-on SGASA204C | ハンドツール | 販売中 | 4 | `snapon-pick-tool-sgasa204c` | `ピックツール/SGASA204C` |
-| 28 | ロングピックツール ツールトレー | Snap-on SGLASA204C | ハンドツール | 販売中 | 8 | `snapon-pick-tool-sglasa204c` | `ピックツール/SGLASA204C` |
+| 24 | ネジ山修正キットホルダー | Snap-on RTD15M | その他 | 販売中 | 9 | `snapon-thread-repair-tool` | `ネジ山修正ツール` |
+| 25 | ハンドソーホルダー | Snap-on HS50 | その他 | 販売中 | 7 | `snapon-hand-saw` | `ハンドソー` |
+| 26 | ピックツール ツールトレー | Snap-on ASA204B | その他 | 販売中 | 6 | `snapon-pick-tool-asa204b` | `ピックツール/ASA204B` |
+| 27 | ピックツール ツールトレー | Snap-on SGASA204C | その他 | 販売中 | 4 | `snapon-pick-tool-sgasa204c` | `ピックツール/SGASA204C` |
+| 28 | ロングピックツール ツールトレー | Snap-on SGLASA204C | その他 | 販売中 | 8 | `snapon-pick-tool-sglasa204c` | `ピックツール/SGLASA204C` |
 | 29 | ブレーカーバーホルダー 450mm | Snap-on F18LA ほか 3/8 ブレーカーバー | ラチェットハンドル | 販売中 | 7 | `snapon-breaker-bar` | `ブレーカーバー` |
-| 30 | プライバーホルダー 壁掛けタイプ | Snap-on SPBS8A / SPBS12A / SPBS18A / SPBS24A / SPBS704A | ハンドツール | 販売中 | 6 | `snapon-pry-bar-wall` | `プライバー/壁掛け` |
-| 31 | プライバーホルダー 直置きタイプ | Snap-on SPBS8A / SPBS12A / SPBS18A / SPBS24A / SPBS704A | ハンドツール | 販売中 | 6 | `snapon-pry-bar-flat` | `プライバー/平置き` |
+| 30 | プライバーホルダー 壁掛けタイプ | Snap-on SPBS8A / SPBS12A / SPBS18A / SPBS24A / SPBS704A | プライバー | 販売中 | 6 | `snapon-pry-bar-wall` | `プライバー/壁掛け` |
+| 31 | プライバーホルダー 直置きタイプ | Snap-on SPBS8A / SPBS12A / SPBS18A / SPBS24A / SPBS704A | プライバー | 販売中 | 6 | `snapon-pry-bar-flat` | `プライバー/平置き` |
 | 32 | スライディングT型ハンドル／ラチェットアダプターホルダー | Snap-on F67B / F77 / F77A / F5L | ラチェットハンドル | 販売中 | 5 | `snapon-ratchet-adapter-f77-f5l` | `ラチェットアダプター/F77＋F5L` |
 | 33 | スライディングT型ハンドル／ラチェットアダプターホルダー | Snap-on TM67A / TM5 | ラチェットハンドル | 販売中 | 4 | `snapon-ratchet-adapter-tm67a-tm5` | `ラチェットアダプター/TM67A＋TM5` |
 | 34 | ラチェットドライバーホルダー | Snap-on SGDMRC11 | ラチェットハンドル | 販売中 | 5 | `snapon-ratchet-driver-sgdmrc11` | `ラチェットドライバー/SGDMRC11` |
@@ -57,7 +57,7 @@
 | 46 | ラチェットホルダー | Snap-on FZ80（3/8） | ラチェットハンドル | 販売中 | 5 | `snapon-ratchet-handle-multi-purpose` | `ラチェットハンドル/マルチパーパス` |
 | 47 | マルチポジションラチェットホルダー | Snap-on マルチポジションラチェット | ラチェットハンドル | 販売中 | 7 | `snapon-ratchet-handle-multi-position` | `ラチェットハンドル/マルチポジション` |
 | 48 | 汎用レンチホルダー | Snap-on コンビネーションレンチ | レンチ | 販売中 | 8 | `snapon-wrench` | `レンチ` |
-| 49 | マルチポジションプライバーホルダー | Snap-on マルチポジションプライバー | ハンドツール | 販売中 | 6 | `snapon-adjustable-pry-bar` | `可変プライバー` |
+| 49 | マルチポジションプライバーホルダー | Snap-on マルチポジションプライバー | プライバー | 販売中 | 6 | `snapon-adjustable-pry-bar` | `可変プライバー` |
 
 ## Ko-ken
 
@@ -83,8 +83,8 @@
 | # | 作品名 | 対応 | カテゴリ | 状態 | 枚数 | ID | 原本フォルダ |
 |---|---|---|---|---|---|---|---|
 | 64 | インパクトソケットホルダー | KTC インパクトソケット 17 / 19 / 21mm | ソケット | 販売中 | 3 | `ktc-impact-socket` | `インパクトソケット` |
-| 65 | クリップツールホルダー | KTC AP209-7A / AP209-9A | ハンドツール | 販売中 | 5 | `ktc-clip-tool` | `クリップツール` |
-| 66 | 内張り剥がしホルダー | KTC ハンディリムーバーセット ATP2015 | ハンドツール | 販売中 | 5 | `ktc-handy-remover-atp2015` | `ハンディリムーバーセット_ATP2015` |
+| 65 | クリップツールホルダー | KTC AP209-7A / AP209-9A | その他 | 販売中 | 5 | `ktc-clip-tool` | `クリップツール` |
+| 66 | 内張り剥がしホルダー | KTC ハンディリムーバーセット ATP2015 | その他 | 販売中 | 5 | `ktc-handy-remover-atp2015` | `ハンディリムーバーセット_ATP2015` |
 | 67 | 細軸ドライバーホルダー | KTC 細軸ドライバー | ドライバー | 販売中 | 1 | `ktc-slim-driver` | `細軸ドライバー` |
 | 68 | 電動ラチェットホルダー | KTC JTRE330 | ラチェットハンドル | 販売中 | 8 | `ktc-power-ratchet-jtre330` | `電動ラチェット＿JTRE330` |
 
@@ -105,11 +105,11 @@
 
 | # | 作品名 | 対応 | カテゴリ | 状態 | 枚数 | ID | 原本フォルダ |
 |---|---|---|---|---|---|---|---|
-| 77 | クリップクランプツールホルダー | PB SWISS TOOLS 671.6-110 / 671.10-120 | ハンドツール | 販売中 | 6 | `pbswiss-clip-tool` | `クリップツール` |
+| 77 | クリップクランプツールホルダー | PB SWISS TOOLS 671.6-110 / 671.10-120 | その他 | 販売中 | 6 | `pbswiss-clip-tool` | `クリップツール` |
 | 78 | コインドライバーホルダー | PB SWISS TOOLS 8125.9-45 / 8126.9-45 | ドライバー | 販売中 | 5 | `pbswiss-coin-driver` | `コインドライバー` |
 | 79 | ドライバーホルダー | PB SWISS TOOLS 8190 / 8100 シリーズ | ドライバー | 販売中 | 6 | `pbswiss-driver` | `ドライバー` |
-| 80 | ピックツール ツールトレー | PB SWISS TOOLS 7675〜7678 シリーズ | ハンドツール | 販売中 | 3 | `pbswiss-pick-tool` | `ピックツール` |
-| 81 | ホースリムーバー ツールトレー | PB SWISS TOOLS 7672.6-90 / 7673.6-100 | ハンドツール | 販売中 | 5 | `pbswiss-hose-remover` | `ホースリムーバー` |
+| 80 | ピックツール ツールトレー | PB SWISS TOOLS 7675〜7678 シリーズ | その他 | 販売中 | 3 | `pbswiss-pick-tool` | `ピックツール` |
+| 81 | ホースリムーバー ツールトレー | PB SWISS TOOLS 7672.6-90 / 7673.6-100 | その他 | 販売中 | 5 | `pbswiss-hose-remover` | `ホースリムーバー` |
 | 82 | 六角レンチホルダー | PB SWISS TOOLS 212 シリーズ | ドライバー | 販売中 | 6 | `pbswiss-hex-key` | `六角レンチ` |
 
 ## SIGNET
@@ -121,7 +121,7 @@
 | 85 | ソケットホルダー ショート | SIGNET 12133 | ソケット | 販売中 | 4 | `signet-socket-holder-short` | `ソケットホルダー/ショートソケット` |
 | 86 | ソケットホルダー 3/8sqセット | SIGNET 3/8sq ソケットセット | ソケット | 販売中 | 3 | `signet-socket-holder-set` | `ソケットホルダー/セット` |
 | 87 | ソケットホルダー ディープ | SIGNET 12431 | ソケット | 販売中 | 3 | `signet-socket-holder-deep` | `ソケットホルダー/ディープソケット` |
-| 88 | ピンポンチホルダー | SIGNET ピンポンチセット | ハンドツール | 販売中 | 6 | `signet-pin-punch` | `ピンポンチ` |
+| 88 | ピンポンチホルダー | SIGNET ピンポンチセット | その他 | 販売中 | 6 | `signet-pin-punch` | `ピンポンチ` |
 
 ## Blue-Point
 
@@ -173,6 +173,6 @@
 | # | 作品名 | 対応 | カテゴリ | 状態 | 枚数 | ID | 原本フォルダ |
 |---|---|---|---|---|---|---|---|
 | 99 | カスタムグリップ | ラチェット・ドライバーなどのグリップ交換用 | グリップ | 販売中 | 11 | `universal-grip` | `$GRIP` |
-| 100 | プライヤー・ペンチ汎用ホルダー 45° | 各社プライヤー・ペンチ | ハンドツール | 販売中 | 5 | `universal-plier-holder-45deg` | `$プライヤーホルダー/45deg` |
-| 101 | プライヤー・ペンチ汎用ホルダー 背高 | 各社プライヤー・ペンチ | ハンドツール | 販売中 | 7 | `universal-plier-holder-high` | `$プライヤーホルダー/high` |
+| 100 | プライヤー・ペンチ汎用ホルダー 45° | 各社プライヤー・ペンチ | プライヤー | 販売中 | 5 | `universal-plier-holder-45deg` | `$プライヤーホルダー/45deg` |
+| 101 | プライヤー・ペンチ汎用ホルダー 背高 | 各社プライヤー・ペンチ | プライヤー | 販売中 | 7 | `universal-plier-holder-high` | `$プライヤーホルダー/high` |
 | 102 | 汎用モンキーレンチホルダー | 各社モンキーレンチ | レンチ | 販売中 | 6 | `universal-adjustable-wrench-holder` | `$モンキーレンチホルダー` |

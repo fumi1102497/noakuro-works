@@ -416,7 +416,7 @@ const WORKS = [
     id: "snapon-pry-bar-wall",
     makers: [{"maker": "Snap-on", "model": "SPBS8A"}, {"maker": "Snap-on", "model": "SPBS12A"}, {"maker": "Snap-on", "model": "SPBS18A"}, {"maker": "Snap-on", "model": "SPBS24A"}, {"maker": "Snap-on", "model": "SPBS704A"}],
     title: "プライバーホルダー 壁掛けタイプ",
-    category: "hand",
+    category: "prybar",
     status: "販売中",
     target: "Snap-on SPBS8A / SPBS12A / SPBS18A / SPBS24A / SPBS704A",
     summary: "グリップを上にして4本をまとめて壁掛け。工具箱の側面にも取り付けられます。",
@@ -430,7 +430,7 @@ const WORKS = [
     id: "snapon-pry-bar-flat",
     makers: [{"maker": "Snap-on", "model": "SPBS8A"}, {"maker": "Snap-on", "model": "SPBS12A"}, {"maker": "Snap-on", "model": "SPBS18A"}, {"maker": "Snap-on", "model": "SPBS24A"}, {"maker": "Snap-on", "model": "SPBS704A"}],
     title: "プライバーホルダー 直置きタイプ",
-    category: "hand",
+    category: "prybar",
     status: "販売中",
     target: "Snap-on SPBS8A / SPBS12A / SPBS18A / SPBS24A / SPBS704A",
     summary: "引き出しや棚に直置きするタイプ。長いプライバー用のサポートも付きます。",
@@ -682,7 +682,7 @@ const WORKS = [
     id: "snapon-adjustable-pry-bar",
     makers: [{"maker": "Snap-on", "model": "マルチポジションプライバー"}],
     title: "マルチポジションプライバーホルダー",
-    category: "hand",
+    category: "prybar",
     status: "販売中",
     target: "Snap-on マルチポジションプライバー",
     summary: "長さの違うマルチポジションプライバーを並べて収めるホルダーです。",
@@ -1396,7 +1396,7 @@ const WORKS = [
     id: "universal-plier-holder-45deg",
     makers: [{"maker": "汎用 / その他", "model": "プライヤー・ペンチ"}],
     title: "プライヤー・ペンチ汎用ホルダー 45°",
-    category: "hand",
+    category: "plier",
     status: "販売中",
     target: "各社プライヤー・ペンチ",
     summary: "45°の傾斜で挟み込むホルダー。本数に合わせて連結できます。",
@@ -1410,7 +1410,7 @@ const WORKS = [
     id: "universal-plier-holder-high",
     makers: [{"maker": "汎用 / その他", "model": "プライヤー・ペンチ"}],
     title: "プライヤー・ペンチ汎用ホルダー 背高",
-    category: "hand",
+    category: "plier",
     status: "販売中",
     target: "各社プライヤー・ペンチ",
     summary: "背の高いタイプ。厚みのあるプライヤーもしっかり保持します。",
@@ -1446,8 +1446,10 @@ const CATEGORIES = [
   { key: "driver", label: "ドライバー" },
   { key: "wrench", label: "レンチ" },
   { key: "torque", label: "トルクレンチ" },
-  { key: "hand", label: "ハンドツール" },
-  { key: "grip", label: "グリップ" }
+  { key: "plier", label: "プライヤー" },
+  { key: "prybar", label: "プライバー" },
+  { key: "grip", label: "グリップ" },
+  { key: "hand", label: "その他" }
 ];
 
 const COMMON_NOTES = ["工具は付属しません（ホルダー本体のみ）", "カラーは全16色から選べます", "サイズ変更・カラー指定は出品ページのコメントからご相談ください"];
