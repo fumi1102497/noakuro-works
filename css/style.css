@@ -123,6 +123,8 @@ p { margin: 0 0 1em; }
   border: 1px solid var(--line); background: #fff; color: var(--ink);
 }
 .filters button[aria-selected="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+/* もう片方の条件で0件になったものは押せない */
+.filters button[disabled] { opacity: .32; cursor: default; }
 .f-count { font-size: .68rem; color: var(--steel); }
 .filters button[aria-selected="true"] .f-count { color: rgba(255,255,255,.65); }
 .result-count { font-size: .78rem; color: var(--steel); margin: 0; }

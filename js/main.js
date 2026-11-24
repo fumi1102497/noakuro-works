@@ -25,7 +25,7 @@ let curCat = "all";
 let curMaker = "all";
 let shown = PAGE;
 
-/* ---------- 作品一覧 ---------- */
+/* ---------- 制作ホルダー一覧 ---------- */
 
 function thumb(work) {
   if (work.thumb || work.image) {
@@ -35,19 +35,33 @@ function thumb(work) {
   return `<div class="thumb-placeholder"><span class="mono">${esc(work.id.toUpperCase())}</span></div>`;
 }
 
-function renderFilters() {
-  filters.innerHTML = CATEGORIES.map((c) => {
-    const n = c.key === "all" ? WORKS.length : WORKS.filter((w) => w.category === c.key).length;
-    return `<button role="tab" data-cat="${c.key}" aria-selected="${c.key === curCat}">${esc(c.label)}<span class="f-count mono">${n}</span></button>`;
-  }).join("");
+// 2つの条件は AND。件数も「もう片方で絞った結果」を出すので、
+// メーカーを選ぶとカテゴリ側の件数が連動して変わる（0件のものは押せなくする）
+const matchCat = (w, key) => key === "all" || w.category === key;
+const matchMaker = (w, key) => key === "all" || makersOf(w).includes(key);
 
+function chip(attr, key, label, n, selected) {
+  return `<button role="tab" data-${attr}="${esc(key)}" aria-selected="${selected}"${n ? "" : " disabled"}>` +
+    `${esc(label)}<span class="f-count mono">${n}</span></button>`;
+}
+
+function renderFilters() {
+  // カテゴリの件数は、いま選んでいるメーカーの中で数える
+  filters.innerHTML = CATEGORIES.map((c) =>
+    chip("cat", c.key, c.label,
+         WORKS.filter((w) => matchCat(w, c.key) && matchMaker(w, curMaker)).length,
+         c.key === curCat)
+  ).join("");
+
+  // メーカーの件数は、いま選んでいるカテゴリの中で数える
   const used = MAKER_ORDER.filter((m) => WORKS.some((w) => makersOf(w).includes(m)));
   const extra = [...new Set(WORKS.flatMap(makersOf))].filter((m) => !MAKER_ORDER.includes(m));
   makerFilters.innerHTML = [["all", "全メーカー"], ...[...used, ...extra].map((m) => [m, m])]
-    .map(([key, label]) => {
-      const n = key === "all" ? WORKS.length : WORKS.filter((w) => makersOf(w).includes(key)).length;
-      return `<button role="tab" data-maker="${esc(key)}" aria-selected="${key === curMaker}">${esc(label)}<span class="f-count mono">${n}</span></button>`;
-    })
+    .map(([key, label]) =>
+      chip("maker", key, label,
+           WORKS.filter((w) => matchMaker(w, key) && matchCat(w, curCat)).length,
+           key === curMaker)
+    )
     .join("");
 }
 
@@ -56,7 +70,7 @@ filters.addEventListener("click", (e) => {
   if (!btn) return;
   curCat = btn.dataset.cat;
   shown = PAGE;
-  filters.querySelectorAll("button").forEach((b) => b.setAttribute("aria-selected", b === btn));
+  renderFilters();
   renderWorks();
 });
 
@@ -65,7 +79,7 @@ makerFilters.addEventListener("click", (e) => {
   if (!btn) return;
   curMaker = btn.dataset.maker;
   shown = PAGE;
-  makerFilters.querySelectorAll("button").forEach((b) => b.setAttribute("aria-selected", b === btn));
+  renderFilters();
   renderWorks();
 });
 
@@ -84,16 +98,14 @@ function cardHtml(w) {
 }
 
 function renderWorks() {
-  const list = WORKS.filter(
-    (w) => (curCat === "all" || w.category === curCat) && (curMaker === "all" || makersOf(w).includes(curMaker))
-  );
+  const list = WORKS.filter((w) => matchCat(w, curCat) && matchMaker(w, curMaker));
   const view = list.slice(0, shown);
   const rest = list.length - view.length;
 
-  resultCount.textContent = rest > 0 ? `${list.length} 作品中 ${view.length} 作品を表示` : `${list.length} 作品`;
+  resultCount.textContent = rest > 0 ? `${list.length} 点中 ${view.length} 点を表示` : `${list.length} 点`;
   grid.innerHTML = list.length
     ? view.map(cardHtml).join("")
-    : `<p class="no-result">この条件に合う作品はありません。</p>`;
+    : `<p class="no-result">この条件に合うホルダーはありません。</p>`;
 
   moreWrap.hidden = rest <= 0;
   if (rest > 0) {
@@ -114,7 +126,7 @@ moreBtn.addEventListener("click", () => {
   if (cards[before]) cards[before].focus({ preventScroll: true });
 });
 
-/* ---------- 作品詳細（ギャラリー付き） ---------- */
+/* ---------- ホルダー詳細（ギャラリー付き） ---------- */
 
 function galleryMarkup(shots, tiles, alt, start) {
   const nav =
@@ -253,7 +265,7 @@ function openCabinet(start) {
   if (!modal.open) modal.showModal();
 }
 
-let gallery = null; // { shots, i, show } — 開いている作品のギャラリー
+let gallery = null; // { shots, i, show } — 開いているホルダーのギャラリー
 
 function setupGallery(shots, start = 0, captions = null) {
   const main = modalBody.querySelector("#galleryMain");
