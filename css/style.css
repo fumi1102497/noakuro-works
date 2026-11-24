@@ -161,6 +161,24 @@ p { margin: 0 0 1em; }
 .work-info h3 { font-size: 1.02rem; margin-bottom: .3em; }
 .work-target { font-size: .82rem; color: var(--steel); margin: 0; }
 
+/* もっと見る */
+.more-wrap { display: flex; justify-content: center; margin-top: 28px; }
+.more-btn {
+  font: inherit; font-size: .9rem; font-weight: 700; cursor: pointer;
+  display: inline-flex; align-items: center; gap: .7em;
+  padding: .8em 1.8em; border-radius: 999px;
+  border: 1px solid var(--ink); background: #fff; color: var(--ink);
+  transition: background .15s, color .15s, border-color .15s;
+}
+.more-btn:hover, .more-btn:focus-visible { background: var(--ink); color: #fff; }
+.more-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.more-arrow {
+  display: grid; place-items: center; width: 1.6em; height: 1.6em; border-radius: 50%;
+  background: var(--accent); color: #fff; font-size: .9em; line-height: 1;
+}
+.more-rest { font-size: .72rem; color: var(--steel); font-weight: 400; }
+.more-btn:hover .more-rest, .more-btn:focus-visible .more-rest { color: rgba(255,255,255,.7); }
+
 /* 互換品の注意書き（作品一覧の下） */
 .maker-note { margin-top: 24px; }
 

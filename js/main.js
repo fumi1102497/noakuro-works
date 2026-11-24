@@ -9,6 +9,8 @@ const grid = document.getElementById("worksGrid");
 const filters = document.querySelector(".cat-filters");
 const makerFilters = document.querySelector(".maker-filters");
 const resultCount = document.getElementById("resultCount");
+const moreWrap = document.getElementById("moreWrap");
+const moreBtn = document.getElementById("moreBtn");
 const modal = document.getElementById("workModal");
 const modalBody = document.getElementById("modalBody");
 
@@ -17,8 +19,10 @@ const catLabel = (key) => (CATEGORIES.find((c) => c.key === key) || {}).label ||
 const statusClass = (s) => (s === "販売中" ? "is-sale" : s === "受注製作" ? "is-order" : "is-soon");
 const makersOf = (w) => [...new Set((w.makers || []).map((m) => m.maker))];
 
+const PAGE = 10; // 一度に表示する件数
 let curCat = "all";
 let curMaker = "all";
+let shown = PAGE;
 
 /* ---------- 作品一覧 ---------- */
 
@@ -50,6 +54,7 @@ filters.addEventListener("click", (e) => {
   const btn = e.target.closest("button");
   if (!btn) return;
   curCat = btn.dataset.cat;
+  shown = PAGE;
   filters.querySelectorAll("button").forEach((b) => b.setAttribute("aria-selected", b === btn));
   renderWorks();
 });
@@ -58,33 +63,55 @@ makerFilters.addEventListener("click", (e) => {
   const btn = e.target.closest("button");
   if (!btn) return;
   curMaker = btn.dataset.maker;
+  shown = PAGE;
   makerFilters.querySelectorAll("button").forEach((b) => b.setAttribute("aria-selected", b === btn));
   renderWorks();
 });
 
-function renderWorks() {
-  const list = WORKS.filter(
-    (w) => (curCat === "all" || w.category === curCat) && (curMaker === "all" || makersOf(w).includes(curMaker))
-  );
-  resultCount.textContent = `${list.length} 作品`;
-  grid.innerHTML = list.length
-    ? list
-        .map(
-          (w) => `
+function cardHtml(w) {
+  return `
       <article class="work-card" tabindex="0" data-id="${esc(w.id)}">
         <div class="work-thumb">${thumb(w)}<span class="status ${statusClass(w.status)}">${esc(w.status)}</span>${
-            w.images && w.images.length > 1 ? `<span class="shot-count mono">${w.images.length}</span>` : ""
-          }</div>
+    w.images && w.images.length > 1 ? `<span class="shot-count mono">${w.images.length}</span>` : ""
+  }</div>
         <div class="work-info">
           <p class="work-cat mono">${esc(catLabel(w.category))}</p>
           <h3>${esc(w.title)}</h3>
           <p class="work-target">${esc(w.target)}</p>
         </div>
-      </article>`
-        )
-        .join("")
-    : `<p class="no-result">この条件に合う作品はありません。</p>`;
+      </article>`;
 }
+
+function renderWorks() {
+  const list = WORKS.filter(
+    (w) => (curCat === "all" || w.category === curCat) && (curMaker === "all" || makersOf(w).includes(curMaker))
+  );
+  const view = list.slice(0, shown);
+  const rest = list.length - view.length;
+
+  resultCount.textContent = rest > 0 ? `${list.length} 作品中 ${view.length} 作品を表示` : `${list.length} 作品`;
+  grid.innerHTML = list.length
+    ? view.map(cardHtml).join("")
+    : `<p class="no-result">この条件に合う作品はありません。</p>`;
+
+  moreWrap.hidden = rest <= 0;
+  if (rest > 0) {
+    const next = Math.min(PAGE, rest);
+    moreBtn.innerHTML =
+      `<span class="more-arrow" aria-hidden="true">↓</span>` +
+      `<span>あと${next}件を表示</span>` +
+      `<span class="more-rest mono">残り ${rest}</span>`;
+  }
+}
+
+moreBtn.addEventListener("click", () => {
+  const before = grid.querySelectorAll(".work-card").length;
+  shown += PAGE;
+  renderWorks();
+  // 追加された先頭のカードへフォーカスを移す（キーボード・読み上げ用）
+  const cards = grid.querySelectorAll(".work-card");
+  if (cards[before]) cards[before].focus({ preventScroll: true });
+});
 
 /* ---------- 作品詳細（ギャラリー付き） ---------- */
 
