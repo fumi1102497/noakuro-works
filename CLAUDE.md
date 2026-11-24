@@ -42,7 +42,7 @@ tools/works-list.md     確認用の作品一覧 ★自動生成
 tools/build_images.py   写真の変換（EXIF削除・WebP化）
 tools/build_works.py    js/works.js と works-list.md の生成
 .claude/launch.json     ローカル確認用サーバーの設定
-CNAME                   独自ドメイン名（現在は仮で example.com）
+CNAME.example           独自ドメイン名のひな形（ドメインが決まったら CNAME にリネーム）
 README.md               差し替え箇所と GitHub Pages の公開手順
 ```
 
@@ -179,7 +179,7 @@ python tools/build_images.py --force  # 全部作り直す
 - [x] 個別の商品URLは載せない方針に決定
 - [ ] **`.gitignore` を作って `img(メーカー別)/` を除外する**（原本1.7GB。公開用リポジトリに入れてはいけない。`images/` の85MBだけ push する）
 - [ ] 工房写真を `index.html` の `#about`（`WORKSHOP PHOTO` の枠）に入れる
-- [ ] ドメインを決めて `CNAME` を書き換え
+- [ ] ドメインを決めて `CNAME.example` を `CNAME` にリネーム＋中身を書き換え（仮のドメインのまま置くと Pages がそれを独自ドメインとして扱うので、今は外してある）
 - [ ] GitHub リポジトリ作成 → push → Settings › Pages で `main` / `/(root)` を公開
 - [ ] DNS 設定（www は CNAME → `ユーザー名.github.io`、apex は GitHub 指定の A レコード4つ）→ Enforce HTTPS
 - [ ] Settings › Pages の Verified domains でドメイン認証（乗っ取り対策）
