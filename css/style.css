@@ -169,6 +169,23 @@ p { margin: 0 0 1em; }
   -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden;
 }
 
+/* 制作カラー一覧 */
+.color-photo {
+  margin: 0 0 22px; border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; background: var(--paper-2);
+}
+.color-photo img { display: block; width: 100%; height: auto; }
+.color-list {
+  list-style: none; padding: 0; margin: 0 0 16px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px 18px;   /* 16色 = 4列×4行 */
+}
+.color-list li {
+  display: flex; align-items: baseline; gap: .6em;
+  font-size: .92rem; padding-bottom: 6px; border-bottom: 1px solid var(--line);
+}
+/* 写真に焼き込んだ番号と並びを合わせる */
+.color-num { min-width: 1.7em; text-align: right; font-size: .78rem; color: var(--accent); }
+
 /* キャビネット収納イメージ */
 .shot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
 .shot {
@@ -330,6 +347,7 @@ p { margin: 0 0 1em; }
   .site-nav .nav-cta { margin-top: 12px; text-align: center; }
 
   .custom-inner, .about-inner { grid-template-columns: 1fr; }
+  .color-list { grid-template-columns: 1fr 1fr; gap: 6px 14px; }   /* 16色 = 2列×8行 */
   .flow { grid-template-columns: 1fr 1fr; }
   .flow li::after { display: none; }
   .shop-links { grid-template-columns: 1fr; }
