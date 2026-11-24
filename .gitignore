@@ -1,0 +1,19 @@
+# 写真の原本（約1.7GB）。公開に必要なのは変換後の images/ だけなので push しない。
+# 原本が消えると作り直せないので、別途ローカルか外付けでバックアップしておくこと。
+img(メーカー別)/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OS・エディタ
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# 作業中の一時ファイル
+*.tmp
+*.bak

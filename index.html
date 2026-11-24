@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>のあくろ工房｜3Dプリント工具ホルダー</title>
+  <meta name="description" content="Snap-on・Ko-ken・KTCなどの工具に合わせた3Dプリント製ホルダー・オーガナイザーを製作。メルカリ・ヤフオクで販売中、サイズ指定のカスタム製作にも対応します。">
+  <meta property="og:title" content="のあくろ工房｜3Dプリント工具ホルダー">
+  <meta property="og:description" content="工具に合わせて設計する、3Dプリント製の工具ホルダー。">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#top" class="logo">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text"><span class="logo-ja">のあくろ工房</span><small>NOAKURO 3D PRINT WORKS</small></span>
+      </a>
+      <button class="nav-toggle" aria-label="メニュー" aria-expanded="false"><span></span><span></span></button>
+      <nav class="site-nav">
+        <a href="#works">作品</a>
+        <a href="#makers">対応メーカー</a>
+        <a href="#custom">カスタム製作</a>
+        <a href="#flow">ご注文の流れ</a>
+        <a href="#about">工房について</a>
+        <a href="#faq">FAQ</a>
+        <a href="#shop" class="nav-cta">ショップ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <p class="eyebrow mono">// 3D PRINTED TOOL STORAGE</p>
+        <h1>工具に合わせて、<br>ホルダーを設計する。</h1>
+        <p class="lead">
+          ラチェット、エクステンションバー、プライバー、T形ハンドル。<br>
+          手持ちの工具を実測し、工具箱の1ミリまで使い切るホルダーを3Dプリントで製作しています。
+        </p>
+        <div class="hero-actions">
+          <a href="#works" class="btn btn-primary">作品を見る</a>
+          <a href="#custom" class="btn btn-ghost">カスタム製作の相談</a>
+        </div>
+        <dl class="hero-stats mono">
+          <div><dt>PRINTERS</dt><dd>6<span>台</span></dd></div>
+          <div><dt>DESIGN</dt><dd>OpenSCAD / FreeCAD</dd></div>
+          <div><dt>SHIPPING</dt><dd>ネコポス・クリックポスト</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- WORKS -->
+    <section id="works" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow mono">01 / WORKS</p>
+          <h2>作品一覧</h2>
+          <p class="section-lead">気になる作品をタップすると詳細を表示します。購入はメルカリ・ヤフオクからどうぞ。</p>
+        </div>
+        <div class="filter-block">
+          <p class="filter-label mono">MAKER</p>
+          <div class="filters maker-filters" role="tablist" aria-label="メーカー">
+            <!-- js/main.js で生成 -->
+          </div>
+          <p class="filter-label mono">CATEGORY</p>
+          <div class="filters cat-filters" role="tablist" aria-label="カテゴリ">
+            <!-- js/main.js で生成 -->
+          </div>
+          <p class="result-count mono" id="resultCount" aria-live="polite"></p>
+        </div>
+        <div class="works-grid" id="worksGrid">
+          <!-- js/main.js で生成 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- MAKERS -->
+    <section id="makers" class="section section-tint">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow mono">02 / MAKERS</p>
+          <h2>対応メーカー</h2>
+          <p class="section-lead">各メーカーの工具に合わせて設計した作品です。型番を押すと作品の詳細を表示します。</p>
+        </div>
+        <div class="maker-grid" id="makerGrid">
+          <!-- js/main.js で生成 -->
+        </div>
+        <p class="note maker-note">
+          ※当工房の製品は、記載の工具に合わせてオリジナルに設計した互換品です。各メーカーの純正品・公式製品ではなく、各メーカーとは関係ありません。
+          メーカー名・品番は対応工具を示すために記載しています。
+        </p>
+      </div>
+    </section>
+
+    <!-- CUSTOM -->
+    <section id="custom" class="section section-dark">
+      <div class="wrap custom-inner">
+        <div>
+          <p class="eyebrow mono">03 / CUSTOM</p>
+          <h2>手持ちの工具に合わせて<br>作ります。</h2>
+          <p>
+            寸法はすべてパラメトリック設計（OpenSCAD・FreeCAD）なので、穴径・本数・角度・厚みの変更が得意です。
+            「この工具が入るホルダーが欲しい」「工具箱の引き出しに収まる幅で」など、まずはお気軽にご相談ください。
+          </p>
+        </div>
+        <ul class="spec-list">
+          <li><span class="mono">SIZE</span>穴径・深さ・本数・間隔の指定</li>
+          <li><span class="mono">ANGLE</span>立て掛け角度の調整（工具箱の高さに合わせて）</li>
+          <li><span class="mono">MOUNT</span>マグネット / ビス留め / 直置き</li>
+          <li><span class="mono">COLOR</span>カラー指定（在庫フィラメントから）</li>
+          <li><span class="mono">SHIP</span>厚み30mm以内ならネコポス・クリックポストで発送</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FLOW -->
+    <section id="flow" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow mono">04 / FLOW</p>
+          <h2>ご注文の流れ</h2>
+        </div>
+        <ol class="flow">
+          <li>
+            <span class="flow-num mono">01</span>
+            <h3>作品を選ぶ</h3>
+            <p>このサイトで作品をご覧いただき、メルカリまたはヤフオクの出品ページへ。</p>
+          </li>
+          <li>
+            <span class="flow-num mono">02</span>
+            <h3>コメントで相談</h3>
+            <p>サイズ変更・カラー指定などは、出品ページのコメントでお知らせください。</p>
+          </li>
+          <li>
+            <span class="flow-num mono">03</span>
+            <h3>製作</h3>
+            <p>ご注文後に造形します。カスタム品は寸法を確認してから製作に入ります。</p>
+          </li>
+          <li>
+            <span class="flow-num mono">04</span>
+            <h3>発送</h3>
+            <p>ネコポス・クリックポスト・宅急便コンパクトなど、サイズに合わせた方法でお届けします。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section section-tint">
+      <div class="wrap about-inner">
+        <div class="about-photo" aria-hidden="true">
+          <!-- 工房写真に差し替え: <img src="images/workshop.jpg" alt=""> -->
+          <span class="mono">WORKSHOP PHOTO</span>
+        </div>
+        <div>
+          <p class="eyebrow mono">05 / ABOUT</p>
+          <h2>工房について</h2>
+          <p>
+            のあくろ工房は、工具好きの個人工房です。自分の工具箱を整理するために作り始めたホルダーが、
+            同じ悩みを持つ方に使っていただけるようになりました。
+          </p>
+          <p>
+            Creality K1 SE・K1C・K2・K2 Pro の計6台で製作。工具ごとの実測データをもとに設計し、
+            試作して実物で確かめてから販売しています。
+          </p>
+          <p class="note">
+            ※当工房の製品はオリジナル設計の互換品です。各工具メーカーの純正品・公式製品ではありません。
+            記載のメーカー名・品番は対応工具を示すためのものです。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="wrap narrow">
+        <div class="section-head">
+          <p class="eyebrow mono">06 / FAQ</p>
+          <h2>よくあるご質問</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>出品されていない作品も買えますか？</summary>
+            <p>はい。過去作品や一覧にないサイズも製作できます。メルカリ・ヤフオクの出品ページのコメント欄からご相談ください。専用出品をご用意します。</p>
+          </details>
+          <details>
+            <summary>素材は何ですか？</summary>
+            <p>作品により PLA / PETG / ABS / TPU を使い分けています。屋外や車内で使うものは耐熱性の高い素材をおすすめします。</p>
+          </details>
+          <details>
+            <summary>自分の工具に合うか不安です。</summary>
+            <p>工具の品番か、実測寸法（直径・長さなど）をお知らせいただければ、収まるかどうかお答えします。</p>
+          </details>
+          <details>
+            <summary>納期はどれくらいですか？</summary>
+            <p>在庫品は数日以内に発送します。カスタム品は内容によりますが、目安は1〜2週間です。</p>
+          </details>
+          <details>
+            <summary>3Dプリント品の見た目はどうですか？</summary>
+            <p>表面に積層の筋（レイヤー跡）が見えるのが3Dプリントの特徴です。強度や使用に問題はありません。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP -->
+    <section id="shop" class="section section-dark shop">
+      <div class="wrap">
+        <p class="eyebrow mono">07 / SHOP</p>
+        <h2>ご購入はこちら</h2>
+        <div class="shop-links">
+          <a class="shop-card mercari" href="https://jp.mercari.com/user/profile/763495048" target="_blank" rel="noopener">
+            <span class="shop-name">メルカリ</span>
+            <span class="shop-sub">出品一覧を見る →</span>
+          </a>
+          <a class="shop-card yahoo" href="https://auctions.yahoo.co.jp/seller/dbMRC91uKkF7xyH5hGwWn8FQ57kH" target="_blank" rel="noopener">
+            <span class="shop-name">Yahoo!オークション</span>
+            <span class="shop-sub">出品一覧を見る →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span class="mono">© <span id="year"></span> のあくろ工房</span>
+      <a href="#top" class="mono">BACK TO TOP ↑</a>
+    </div>
+  </footer>
+
+  <!-- 作品詳細モーダル -->
+  <dialog id="workModal" class="modal">
+    <button class="modal-close" aria-label="閉じる">×</button>
+    <div class="modal-body" id="modalBody"></div>
+  </dialog>
+
+  <script src="js/works.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
