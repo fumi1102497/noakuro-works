@@ -211,6 +211,7 @@ p { margin: 0 0 1em; }
   background: repeating-linear-gradient(45deg, #d8d4cc 0 12px, #cfcac1 12px 24px);
   color: var(--steel); font-size: .75rem; overflow: hidden;
 }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ---------- FAQ ---------- */
 .faq details { border-bottom: 1px solid var(--line); }

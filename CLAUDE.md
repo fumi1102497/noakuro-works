@@ -140,9 +140,13 @@ img(メーカー別)/
           1.jpg          ← 2枚目以降は詳細モーダルのギャラリー
   #ASTRO/
     インパクトソケット/   ← 2階層で終わる作品もある
+  HP/                  ← 「#」で始まらないフォルダ = サイト用の写真（作品ではない）
+    top_pic.jpg        → images/site/top-pic.webp
 ```
 
-- **一番下の階層が1作品**。そのフォルダの写真は全部ギャラリーに載せる
+- **先頭が「#」のフォルダ＝メーカー**。その下の**一番下の階層が1作品**で、そのフォルダの写真は全部ギャラリーに載せる
+- **「#」で始まらないフォルダ（`HP/`）はサイト用の写真**。作品一覧には出ず、`images/site/<ファイル名>.webp` に変換される。
+  工房について欄の写真がこれ（`index.html` の `#about` から直接ファイル名で参照している）
 - **メイン写真はフォルダ内の最初のファイル**。全角数字（`０.jpg`）も半角に直して並べ替えるので `０` が先頭に来る
 - メイン写真の多くは**出品用バナー**で、作品名・対応型番・「※工具は付属しません」「※カラー変更可能(全16色)」が画像に焼き込まれている。
   `tools/works-data.json` の型番はこのバナーから読み取った
@@ -158,7 +162,12 @@ python tools/build_images.py --force  # 全部作り直す
 2. EXIF の回転情報は、実際に画像を回してから焼き込む
 3. 長辺1600px / quality 80 の WebP → `images/<作品ID>/NN.webp`（平均137KB）
 4. 長辺400px / quality 72 のサムネ → `images/<作品ID>/NN-t.webp`（平均14KB）
-5. `tools/works-map.json` を作り直す（原本から消えた写真の出力ファイルも消す）
+5. `img(メーカー別)/` を全部見て `tools/works-map.json`（作品IDと写真の対応）を作り直す
+6. 原本から消えた写真・フォルダの出力ファイルも消す
+
+作品IDはフォルダ名から作る。日本語のフォルダ名はローマ字にできないので、
+新しい工具名のフォルダを足したら `build_images.py` の `SLUG` に対訳を書き足すこと
+（書かないとIDが重複してエラーで止まる）。
 
 ### 写真を足す・差し替えるとき
 
@@ -178,7 +187,7 @@ python tools/build_images.py --force  # 全部作り直す
 - [x] ショップ欄の出品者ページURL（メルカリ・ヤフオクとも設定済み）
 - [x] 個別の商品URLは載せない方針に決定
 - [x] `.gitignore` で `img(メーカー別)/`（原本1.7GB）を除外。push しているのは `images/` の85MBだけ
-- [ ] 工房写真を `index.html` の `#about`（`WORKSHOP PHOTO` の枠）に入れる
+- [x] 工房について欄の写真（`img(メーカー別)/HP/top_pic.jpg` → `images/site/top-pic.webp`）
 - [ ] ドメインを決めて `CNAME.example` を `CNAME` にリネーム＋中身を書き換え（仮のドメインのまま置くと Pages がそれを独自ドメインとして扱うので、今は外してある）
 - [x] GitHub リポジトリ作成 → push → Pages 公開（https://github.com/fumi1102497/noakuro-works → https://fumi1102497.github.io/noakuro-works/ ）
 - [ ] DNS 設定（www は CNAME → `ユーザー名.github.io`、apex は GitHub 指定の A レコード4つ）→ Enforce HTTPS
