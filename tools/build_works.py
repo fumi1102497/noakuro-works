@@ -48,12 +48,17 @@ def js_str(s):
 
 
 def sort_key(meta, maker_order):
-    """作品の並び順：メーカー → カテゴリ → フォルダ名。
-    MAKER_ORDER と CATEGORIES の並びがそのまま表示順になる。"""
+    """作品の並び順：メーカー → カテゴリ → 品名。
+    MAKER_ORDER と CATEGORIES の並びがそのまま表示順になる。
+    同じカテゴリの中は品名（title）順。文字コード順なので英字 → カタカナ → 漢字の並びになる。
+    同名のときはフォルダ名で固定する。"""
     cat_order = {k: i for i, (k, _) in enumerate(CATEGORIES)}
     def key(p):
-        cat = meta[p["id"]]["category"] if p["id"] in meta else ""
-        return (maker_order.get(p["maker"], 99), cat_order.get(cat, 99), p["folder"])
+        w = meta.get(p["id"], {})
+        return (maker_order.get(p["maker"], 99),
+                cat_order.get(w.get("category", ""), 99),
+                w.get("title", ""),
+                p["folder"])
     return key
 
 
