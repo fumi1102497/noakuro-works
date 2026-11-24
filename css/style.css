@@ -346,6 +346,13 @@ p { margin: 0 0 1em; }
   .site-nav a { padding: 12px 0; width: 100%; border-bottom: 1px solid rgba(255,255,255,.08); }
   .site-nav .nav-cta { margin-top: 12px; text-align: center; }
 
+  /* ヘッダーのすぐ下が空きすぎて見えるので詰める（PCは clamp のまま） */
+  .hero { padding-top: 44px; }
+  /* 見出しの2行目「ホルダーを設計する。」が1行に収まる大きさ。
+     10文字で約10.1em なので、両脇の余白20px×2を引いた幅に収まるよう 8.5vw にしている
+     （360px幅でも折り返さない）。2.1rem は今までの大きさで、そこで頭打ちにする */
+  .hero h1 { font-size: min(8.5vw, 2.1rem); }
+
   .custom-inner, .about-inner { grid-template-columns: 1fr; }
   .color-list { grid-template-columns: 1fr 1fr; gap: 6px 14px; }   /* 16色 = 2列×8行 */
   .flow { grid-template-columns: 1fr 1fr; }
