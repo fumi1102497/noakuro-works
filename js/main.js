@@ -6,7 +6,6 @@
    ========================================================= */
 
 const grid = document.getElementById("worksGrid");
-const makerGrid = document.getElementById("makerGrid");
 const filters = document.querySelector(".cat-filters");
 const makerFilters = document.querySelector(".maker-filters");
 const resultCount = document.getElementById("resultCount");
@@ -174,61 +173,7 @@ modal.addEventListener("keydown", (e) => {
 });
 modal.addEventListener("close", () => { gallery = null; });
 
-/* ---------- 対応メーカー ---------- */
-
-function renderMakers() {
-  const map = new Map(MAKER_ORDER.map((m) => [m, []]));
-  WORKS.forEach((w) =>
-    (w.makers || []).forEach(({ maker, model }) => {
-      if (!map.has(maker)) map.set(maker, []);
-      map.get(maker).push({ model, work: w });
-    })
-  );
-
-  makerGrid.innerHTML = [...map]
-    .filter(([, items]) => items.length)
-    .map(([maker, items]) => {
-      const seen = new Set();
-      const uniq = items.filter((i) => {
-        const key = i.model + "\u0000" + i.work.id;
-        if (seen.has(key)) return false;
-        seen.add(key);
-        return true;
-      });
-      const count = new Set(uniq.map((i) => i.work.id)).size;
-      const rows = uniq.map(
-        (i) => `<li><button type="button" data-id="${esc(i.work.id)}">
-            <span class="maker-model mono">${esc(i.model)}</span>
-            <span class="maker-work">${esc(i.work.title)}</span>
-          </button></li>`
-      );
-      const LIMIT = 8;
-      const list = (arr) => `<ul class="maker-list">${arr.join("")}</ul>`;
-      const body =
-        rows.length > LIMIT
-          ? list(rows.slice(0, LIMIT)) +
-            `<details class="maker-more"><summary>残り ${rows.length - LIMIT} 件を表示</summary>${list(
-              rows.slice(LIMIT)
-            )}</details>`
-          : list(rows);
-      return `
-      <div class="maker-card">
-        <div class="maker-head">
-          <h3>${esc(maker)}</h3>
-          <span class="maker-count mono">${count} WORKS</span>
-        </div>
-        ${body}
-      </div>`;
-    })
-    .join("");
-}
-
 /* ---------- イベント ---------- */
-
-makerGrid.addEventListener("click", (e) => {
-  const btn = e.target.closest("button[data-id]");
-  if (btn) openWork(btn.dataset.id);
-});
 
 grid.addEventListener("click", (e) => {
   const card = e.target.closest(".work-card");
@@ -256,8 +201,35 @@ nav.addEventListener("click", (e) => {
   }
 });
 
+/* ショップリンク — スマホではアプリで開く（アプリが無ければブラウザ） */
+const APP_PACKAGE = {
+  "jp.mercari.com": "com.kouzoh.mercari",
+  "auctions.yahoo.co.jp": "jp.co.yahoo.android.yauction"
+};
+const isAndroid = /Android/.test(navigator.userAgent);
+const isIOS =
+  /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+if (isAndroid || isIOS) {
+  document.querySelectorAll(".shop-card").forEach((a) => {
+    const web = a.href;
+    // iOS はユニバーサルリンク任せ。別タブで開くとアプリに渡らないことがあるので同じタブにする
+    a.removeAttribute("target");
+    a.removeAttribute("rel");
+    if (!isAndroid) return;
+    const u = new URL(web);
+    const pkg = APP_PACKAGE[u.hostname];
+    if (!pkg) return;
+    // アプリが無ければ browser_fallback_url（＝元のURL）に飛ぶ
+    a.href =
+      "intent://" + u.host + u.pathname + u.search +
+      "#Intent;scheme=https;package=" + pkg +
+      ";S.browser_fallback_url=" + encodeURIComponent(web) + ";end";
+  });
+}
+
 document.getElementById("year").textContent = new Date().getFullYear();
 
 renderFilters();
 renderWorks();
-renderMakers();

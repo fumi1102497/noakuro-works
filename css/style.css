@@ -161,29 +161,7 @@ p { margin: 0 0 1em; }
 .work-info h3 { font-size: 1.02rem; margin-bottom: .3em; }
 .work-target { font-size: .82rem; color: var(--steel); margin: 0; }
 
-/* ---------- Makers ---------- */
-.maker-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 22px; }
-.maker-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 22px 14px; }
-.maker-head {
-  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
-  padding-bottom: 12px; margin-bottom: 4px; border-bottom: 2px solid var(--ink);
-}
-.maker-head h3 { margin: 0; font-size: 1.25rem; }
-.maker-count { font-size: .7rem; color: var(--accent); font-weight: 700; white-space: nowrap; }
-.maker-list { list-style: none; margin: 0; padding: 0; }
-.maker-list li + li { border-top: 1px dashed var(--line); }
-.maker-list button {
-  all: unset; box-sizing: border-box; display: block; width: 100%; padding: 12px 22px 12px 0;
-  cursor: pointer; position: relative;
-}
-.maker-list button::after {
-  content: "→"; position: absolute; right: 2px; top: 50%; transform: translateY(-50%);
-  color: var(--steel); transition: transform .15s, color .15s;
-}
-.maker-list button:hover::after, .maker-list button:focus-visible::after { color: var(--accent); transform: translate(3px, -50%); }
-.maker-list button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.maker-model { display: block; font-size: .82rem; font-weight: 700; }
-.maker-work { display: block; font-size: .78rem; color: var(--steel); }
+/* 互換品の注意書き（作品一覧の下） */
 .maker-note { margin-top: 24px; }
 
 /* ---------- Custom ---------- */
@@ -294,13 +272,6 @@ p { margin: 0 0 1em; }
 }
 .gallery-strip button[aria-selected="true"] { border-color: var(--accent); }
 .gallery-strip img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-.maker-more { margin-top: 4px; }
-.maker-more summary {
-  cursor: pointer; font-size: .78rem; color: var(--steel); padding: 10px 0;
-  border-top: 1px dashed var(--line);
-}
-.maker-more summary:hover { color: var(--accent); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
