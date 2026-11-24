@@ -133,6 +133,12 @@ README.md               差し替え箇所と GitHub Pages の公開手順
 表示名だけなら `CATEGORIES` を直して `python tools/build_works.py` を流せばよい。
 カテゴリを増やすときは `CATEGORIES` に1行足して、該当作品の `category` を書き換える。
 
+### 作品の並び順
+
+**メーカー → カテゴリ → フォルダ名**の順（`build_works.py` の `sort_key`）。
+`MAKER_ORDER` と `CATEGORIES` の並びが、そのまま一覧の表示順になる。
+並べ替えたいときはどちらかのリストの行を入れ替えて `python tools/build_works.py`。
+
 ### メーカー（`MAKER_ORDER` の順）
 
 Snap-on 49 / Ko-ken 14 / NEPROS 8 / PB SWISS TOOLS 6 / SIGNET 6 / KTC 5 / 汎用・その他 4 /

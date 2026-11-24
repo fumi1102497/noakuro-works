@@ -46,10 +46,20 @@ def js_str(s):
     return json.dumps(s, ensure_ascii=False)
 
 
+def sort_key(meta, maker_order):
+    """作品の並び順：メーカー → カテゴリ → フォルダ名。
+    MAKER_ORDER と CATEGORIES の並びがそのまま表示順になる。"""
+    cat_order = {k: i for i, (k, _) in enumerate(CATEGORIES)}
+    def key(p):
+        cat = meta[p["id"]]["category"] if p["id"] in meta else ""
+        return (maker_order.get(p["maker"], 99), cat_order.get(cat, 99), p["folder"])
+    return key
+
+
 def write_list(photos, meta, default_status, order):
     """確認用の一覧 tools/works-list.md を書き出す。"""
     path = os.path.join(HERE, "works-list.md")
-    rows = sorted(photos, key=lambda p: (order.get(p["maker"], 99), p["folder"]))
+    rows = sorted(photos, key=sort_key(meta, order))
     labels = dict(CATEGORIES)
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write("# 作品一覧（確認用）\n\n")
@@ -102,7 +112,7 @@ def main():
     order = {m: i for i, m in enumerate(MAKER_ORDER)}
 
     entries = []
-    for p in sorted(photos, key=lambda p: (order.get(p["maker"], 99), p["folder"])):
+    for p in sorted(photos, key=sort_key(meta, order)):
         w = meta[p["id"]]
         if w["category"] not in cat_keys:
             raise SystemExit("不明なカテゴリ %r（%s）" % (w["category"], p["id"]))
