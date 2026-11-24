@@ -75,7 +75,7 @@
    "1long.jpg",
    "1nasi.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#KTC/クリップツール",
@@ -172,7 +172,7 @@
    "1_koken3.jpg",
    "1_koken4.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Ko-ken/エクステンションバー/3760Z_2760Z",
@@ -187,7 +187,7 @@
    "2.jpg",
    "3.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Ko-ken/エクステンションバー/3763L",
@@ -203,7 +203,7 @@
    "3.jpg",
    "4.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Ko-ken/エクステンションバー/PK2760_PK2763",
@@ -220,7 +220,7 @@
    "4.jpg",
    "5.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Ko-ken/エクステンションバー/PK3760_PK3763",
@@ -235,7 +235,7 @@
    "2.jpg",
    "3.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Ko-ken/ソケット（エクストラディープ）",
@@ -251,7 +251,7 @@
    "3.jpg",
    "4.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Ko-ken/デュアルドライブT型ハンドル/2716WC 3716WC",
@@ -267,7 +267,7 @@
    "3.jpg",
    "4.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Ko-ken/ナットグリップ",
@@ -283,7 +283,7 @@
    "3.jpg",
    "4.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Ko-ken/ナットグリップ（エクストラディープ）",
@@ -299,7 +299,7 @@
    "3.jpg",
    "4.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Ko-ken/フリーターンクロスレンチ/4711X",
@@ -316,7 +316,7 @@
    "4.jpg",
    "5.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Ko-ken/ブレーカーバー",
@@ -337,7 +337,7 @@
    "8.jpg",
    "9.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Ko-ken/ヘックスビット",
@@ -352,7 +352,7 @@
    "2.jpg",
    "3.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Ko-ken/ラチェットハンドル",
@@ -371,7 +371,7 @@
    "6.jpg",
    "7.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#NEPROS/エクステンションバー",
@@ -388,7 +388,7 @@
    "4.jpg",
    "5.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#NEPROS/クイックスピンナ",
@@ -405,7 +405,7 @@
    "4.jpg",
    "5.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#NEPROS/スライドヘッドハンドル",
@@ -421,7 +421,7 @@
    "3.jpg",
    "4.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#NEPROS/プラグレンチ",
@@ -429,32 +429,14 @@
   "id": "nepros-plug-wrench",
   "title": "プラグレンチホルダー",
   "model": "",
-  "count": 4,
+  "count": 3,
   "main": "1.jpg",
   "files": [
    "1.jpg",
    "2.jpg",
-   "3.jpg",
-   "4.jpg"
+   "3.jpg"
   ],
-  "note": ""
- },
- {
-  "folder": "#NEPROS/プラグレンチ/加工",
-  "maker": "NEPROS",
-  "id": "nepros-plug-wrench-mod",
-  "title": "プラグレンチホルダー 加工",
-  "model": "",
-  "count": 5,
-  "main": "IMG20250414144651.jpg",
-  "files": [
-   "IMG20250414144651.jpg",
-   "IMG20250414144706.jpg",
-   "IMG20250414144727.jpg",
-   "IMG20250414144737.jpg",
-   "IMG20250414144809.jpg"
-  ],
-  "note": "非画像除外: 1.xcf"
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#NEPROS/ラチェットアダプター",
@@ -471,7 +453,7 @@
    "4.jpg",
    "5.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#NEPROS/ラチェットハンドル",
@@ -490,7 +472,7 @@
    "6.jpg",
    "7.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#NEPROS/レンチ",
@@ -510,7 +492,7 @@
    "8.jpg",
    "9.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#PB SWISS TOOLS/クリップツール",
@@ -727,7 +709,7 @@
    "4.jpg",
    "5.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/エクステンションバー/12.7sq",
@@ -747,7 +729,7 @@
    "V3.jpg",
    "V4.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/エクステンションバー/6.3sq",
@@ -767,7 +749,7 @@
    "v2.jpg",
    "v3.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/エクステンションバー/9.5sq/locking",
@@ -786,7 +768,7 @@
    "6.jpg",
    "7.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/エクステンションバー/9.5sq/イエロー",
@@ -802,7 +784,7 @@
    "３.jpg",
    "4.jpg"
   ],
-  "note": "全角数字あり"
+  "note": "非画像除外: item.txt / 全角数字あり"
  },
  {
   "folder": "#Snap-on/エクステンションバー/9.5sq/オレンジ",
@@ -818,7 +800,7 @@
    "3.jpg",
    "4.jpg"
   ],
-  "note": "全角数字あり"
+  "note": "非画像除外: item.txt / 全角数字あり"
  },
  {
   "folder": "#Snap-on/エクステンションバー/9.5sq/グリーン",
@@ -834,7 +816,7 @@
    "3.jpg",
    "4.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/エクステンションバー/9.5sq/パープル",
@@ -850,7 +832,7 @@
    "3.jpg",
    "4.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/エクステンションバー/9.5sq/ブラック",
@@ -865,7 +847,7 @@
    "2.jpg",
    "3.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/エクステンションバー/9.5sq/レッド",
@@ -882,7 +864,7 @@
    "4.jpg",
    "sp0.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/クイックスピンナ",
@@ -898,7 +880,7 @@
    "3.jpg",
    "4.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/スナップオン＿シールリムーバー/SGSR104A",
@@ -915,7 +897,7 @@
    "4.jpg",
    "5.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/スナップオン＿ソケットホルダー/212FSMSY",
@@ -923,19 +905,16 @@
   "id": "snapon-socket-holder-212fsmsy",
   "title": "ソケットホルダー 212FSMSY",
   "model": "212FSMSY",
-  "count": 8,
+  "count": 5,
   "main": "1.jpg",
   "files": [
    "1.jpg",
    "2.jpg",
-   "4.jpg",
-   "5.jpg",
-   "7.jpg",
    "8.jpg",
    "9.jpg",
    "10.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/スナップオン＿ソケットホルダー/212FSMY",
@@ -943,17 +922,15 @@
   "id": "snapon-socket-holder-212fsmy",
   "title": "ソケットホルダー 212FSMY",
   "model": "212FSMY",
-  "count": 6,
+  "count": 4,
   "main": "1.jpg",
   "files": [
    "1.jpg",
    "2.jpg",
-   "4.jpg",
-   "5.jpg",
    "8.jpg",
    "9.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/スナップオン＿ソケットホルダー/FDX_212YFSMY",
@@ -970,7 +947,7 @@
    "6.jpg",
    "7.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/スナップオン＿ソケットホルダー/シャロー、セミディープ、ディープ",
@@ -989,7 +966,7 @@
    "5.jpg",
    "6.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/デジタルトルクレンチ",
@@ -1007,7 +984,7 @@
    "5.jpg",
    "7.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/トルクレンチ",
@@ -1028,7 +1005,7 @@
    "8.jpg",
    "9.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ドライバー/SDDX70A",
@@ -1047,7 +1024,7 @@
    "6.jpg",
    "7.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ドライバー/SGDX40",
@@ -1064,7 +1041,7 @@
    "4.jpg",
    "5.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ドライバー/SGDX60",
@@ -1081,7 +1058,7 @@
    "4.jpg",
    "C2.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ドライバー/SGDX80",
@@ -1097,7 +1074,7 @@
    "3.jpg",
    "4.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ドライバー/SGTX40",
@@ -1116,7 +1093,7 @@
    "6.jpg",
    "7.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ネジ山修正ツール",
@@ -1137,7 +1114,7 @@
    "9.jpg",
    "10.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ハンドソー",
@@ -1156,7 +1133,7 @@
    "6.jpg",
    "7.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ピックツール/ASA204B",
@@ -1174,7 +1151,7 @@
    "6.jpg",
    "7.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ピックツール/SGASA204C",
@@ -1190,7 +1167,7 @@
    "3.jpg",
    "4.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ピックツール/SGLASA204C",
@@ -1210,7 +1187,7 @@
    "7.jpg",
    "8.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ブレーカーバー",
@@ -1229,7 +1206,7 @@
    "6.jpg",
    "7.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/プライバー/壁掛け",
@@ -1247,7 +1224,7 @@
    "5.jpg",
    "6.jpg"
   ],
-  "note": "全角数字あり"
+  "note": "非画像除外: item.txt / 全角数字あり"
  },
  {
   "folder": "#Snap-on/プライバー/平置き",
@@ -1265,7 +1242,7 @@
    "5.jpg",
    "6.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットアダプター/F77＋F5L",
@@ -1282,7 +1259,7 @@
    "4.jpg",
    "5.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットアダプター/TM67A＋TM5",
@@ -1298,7 +1275,7 @@
    "3.jpg",
    "5.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットドライバー/SGDMRC11",
@@ -1315,7 +1292,7 @@
    "IMG20260305174517.jpg",
    "IMG20260305175337.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットドライバー/SGDMRC11_44",
@@ -1331,7 +1308,7 @@
    "3.jpg",
    "5.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットドライバー/SGDMRC44",
@@ -1351,7 +1328,7 @@
    "SS3.jpg",
    "SS4.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットハンドル/6.3_9.5_12.7sq",
@@ -1371,7 +1348,7 @@
    "7.jpg",
    "8.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットハンドル/F100_FKF10_ FK100",
@@ -1379,20 +1356,18 @@
   "id": "snapon-ratchet-handle-f100-fkf10-fk100",
   "title": "ラチェットハンドルホルダー F100_FKF10_ FK100",
   "model": "F100_FKF10_ FK100",
-  "count": 9,
+  "count": 7,
   "main": "1.jpg",
   "files": [
    "1.jpg",
    "2.jpg",
    "3.jpg",
    "4 (2).jpg",
-   "5.jpg",
    "6.jpg",
    "7.jpg",
-   "8.jpg",
-   "c.jpg"
+   "8.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットハンドル/FHFD80A",
@@ -1412,7 +1387,7 @@
    "7.jpg",
    "8.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットハンドル/FHKFD80_FHFD80A/幅広",
@@ -1430,7 +1405,7 @@
    "5.jpg",
    "6.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットハンドル/FHKFD80_FHFD80A/幅狭",
@@ -1448,7 +1423,7 @@
    "5.jpg",
    "6.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットハンドル/FK80",
@@ -1467,7 +1442,7 @@
    "6.jpg",
    "7.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットハンドル/T936_FC72_FCF72",
@@ -1475,19 +1450,17 @@
   "id": "snapon-ratchet-handle-t936-fc72-fcf72",
   "title": "ラチェットハンドルホルダー T936_FC72_FCF72",
   "model": "T936_FC72_FCF72",
-  "count": 8,
+  "count": 6,
   "main": "1.jpg",
   "files": [
    "1.jpg",
    "2.jpg",
    "3.jpg",
    "4 (2).jpg",
-   "5.jpg",
    "6.jpg",
-   "7.jpg",
-   "c.jpg"
+   "7.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットハンドル/TK72_TKF72_T72",
@@ -1505,7 +1478,7 @@
    "5.jpg",
    "6.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットハンドル/エクストラロング",
@@ -1522,7 +1495,7 @@
    "4.jpg",
    "7.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットハンドル/マルチパーパス",
@@ -1539,7 +1512,7 @@
    "4.jpg",
    "5.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/ラチェットハンドル/マルチポジション",
@@ -1547,7 +1520,7 @@
   "id": "snapon-ratchet-handle-multi-position",
   "title": "ラチェットハンドルホルダー マルチポジション",
   "model": "",
-  "count": 7,
+  "count": 6,
   "main": "g1.jpg",
   "files": [
    "g1.jpg",
@@ -1555,10 +1528,9 @@
    "g41.jpg",
    "g42.jpg",
    "g50.jpg",
-   "g56.jpg",
-   "g57.jpg"
+   "g56.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#Snap-on/レンチ",
@@ -1647,7 +1619,7 @@
    "6.jpg",
    "7.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#ViGOR (ビガー)/V2941 フィンガーラチェット",
@@ -1663,7 +1635,7 @@
    "IMG20260112063734.jpg",
    "IMG20260112063742.jpg"
   ],
-  "note": ""
+  "note": "非画像除外: item.txt"
  },
  {
   "folder": "#その他/$GRIP",

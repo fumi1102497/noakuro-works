@@ -1,5 +1,5 @@
 /* =========================================================
-   HASEGAWA PRINT WORKS
+   のあくろ工房 — NOAKURO 3D PRINT WORKS
    色やフォントは :root の変数でまとめて変更できます
    ========================================================= */
 :root {
@@ -162,6 +162,12 @@ p { margin: 0 0 1em; }
 .work-cat { font-size: .7rem; color: var(--steel); margin-bottom: .3em; }
 .work-info h3 { font-size: 1.02rem; margin-bottom: .3em; }
 .work-target { font-size: .82rem; color: var(--steel); margin: 0; }
+/* 対応品番を全部書いているので、一覧のカードでは2行で切る（全文は詳細モーダルに出る）。
+   隠れるのは見た目だけで、文字はHTMLに入ったままなので検索には拾われる */
+.work-info .work-target {
+  display: -webkit-box; -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden;
+}
 
 /* キャビネット収納イメージ */
 .shot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
@@ -177,6 +183,8 @@ p { margin: 0 0 1em; }
 
 /* もっと見る */
 .more-wrap { display: flex; justify-content: center; margin-top: 28px; }
+/* display 指定があると hidden 属性（＝全部出し終わった状態）が効かないので打ち消す */
+.more-wrap[hidden] { display: none; }
 .more-btn {
   font: inherit; font-size: .9rem; font-weight: 700; cursor: pointer;
   display: inline-flex; align-items: center; gap: .7em;
