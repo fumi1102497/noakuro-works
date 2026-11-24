@@ -9,6 +9,8 @@ js/main.js              画面の動き（フィルタ・モーダル・ギャ�
 images/<作品ID>/        Web用の写真（WebP）★自動生成
 img(メーカー別)/        写真の原本（1.7GB・push しない）
 tools/works-data.json   作品の文章・型番 ← 手で直すのはここ
+tools/cabinet-data.json キャビネット収納イメージの説明文 ← 手で直す
+tools/site-map.json     サイト用写真の一覧 ★自動生成
 tools/works-map.json    作品IDと写真の対応 ★自動生成
 tools/works-list.md     確認用の作品一覧 ★自動生成
 tools/build_images.py   写真の変換（EXIF削除・WebP化）
@@ -26,6 +28,8 @@ CNAME.example           独自ドメイン名のひな形。ドメインが決�
 | 写真を足す・差し替える | `img(メーカー別)/` | `python tools/build_images.py` → `python tools/build_works.py` |
 | 新しい作品を足す | 上の両方 | 上の両方 |
 | サイト用の写真を変える | `img(メーカー別)/HP/` | `python tools/build_images.py` |
+| 収納イメージの写真を変える | `img(メーカー別)/cabinet/` | `python tools/build_images.py` → `python tools/build_works.py` |
+| 収納イメージの説明文 | `tools/cabinet-data.json` | `python tools/build_works.py` |
 | 販売状態を変える | `tools/works-data.json` に `"status": "準備中"` | `python tools/build_works.py` |
 
 個別の商品ページURLは載せない方針（売り切れ・再出品でURLが変わるため）。

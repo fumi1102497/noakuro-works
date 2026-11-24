@@ -115,6 +115,33 @@ moreBtn.addEventListener("click", () => {
 
 /* ---------- 作品詳細（ギャラリー付き） ---------- */
 
+function galleryMarkup(shots, tiles, alt, start) {
+  const nav =
+    shots.length > 1
+      ? `<button class="gallery-nav prev" data-step="-1" aria-label="前の写真">‹</button>
+           <button class="gallery-nav next" data-step="1" aria-label="次の写真">›</button>
+           <span class="gallery-count mono"><span id="galleryIndex">${start + 1}</span> / ${shots.length}</span>`
+      : "";
+  const strip =
+    shots.length > 1
+      ? `<div class="gallery-strip" role="tablist" aria-label="写真">${tiles
+          .map(
+            (t, i) =>
+              `<button role="tab" data-i="${i}" aria-selected="${i === start}"><img src="${esc(t)}" alt="${esc(
+                alt
+              )} 写真${i + 1}" loading="lazy" decoding="async"></button>`
+          )
+          .join("")}</div>`
+      : "";
+  return `<div class="gallery">
+         <div class="gallery-main">
+           <img id="galleryMain" src="${esc(shots[start])}" alt="${esc(alt)}">
+           ${nav}
+         </div>
+         ${strip}
+       </div>`;
+}
+
 function openWork(id) {
   const w = WORKS.find((x) => x.id === id);
   if (!w) return;
@@ -127,26 +154,7 @@ function openWork(id) {
   const buttons = [`<a class="btn btn-primary" href="#shop" data-close>ショップで探す</a>`];
 
   const galleryHtml = shots.length
-    ? `<div class="gallery">
-         <div class="gallery-main">
-           <img id="galleryMain" src="${esc(shots[0])}" alt="${esc(w.title)}">
-           ${shots.length > 1 ? `<button class="gallery-nav prev" data-step="-1" aria-label="前の写真">‹</button>
-           <button class="gallery-nav next" data-step="1" aria-label="次の写真">›</button>
-           <span class="gallery-count mono"><span id="galleryIndex">1</span> / ${shots.length}</span>` : ""}
-         </div>
-         ${
-           shots.length > 1
-             ? `<div class="gallery-strip" role="tablist" aria-label="写真">${tiles
-                 .map(
-                   (t, i) =>
-                     `<button role="tab" data-i="${i}" aria-selected="${i === 0}"><img src="${esc(t)}" alt="${esc(
-                       w.title
-                     )} 写真${i + 1}" loading="lazy" decoding="async"></button>`
-                 )
-                 .join("")}</div>`
-             : ""
-         }
-       </div>`
+    ? galleryMarkup(shots, tiles, w.title, 0)
     : `<div class="modal-thumb"><div class="thumb-placeholder"><span class="mono">${esc(w.id.toUpperCase())}</span></div></div>`;
 
   modalBody.innerHTML = `
@@ -167,22 +175,101 @@ function openWork(id) {
   if (!modal.open) modal.showModal();
 }
 
+/* ---------- キャビネット収納イメージ ---------- */
+
+const cabinetSection = document.getElementById("cabinet");
+const cabinetGrid = document.getElementById("cabinetGrid");
+const cabinetMoreWrap = document.getElementById("cabinetMoreWrap");
+const cabinetMoreBtn = document.getElementById("cabinetMoreBtn");
+const CAB_PAGE = 8; // 一度に表示する枚数
+let cabShown = CAB_PAGE;
+
+const cabShots = () => (typeof CABINET !== "undefined" && CABINET.shots) || [];
+
+function renderCabinet() {
+  const all = cabShots();
+  if (!all.length) {
+    cabinetSection.hidden = true;
+    return;
+  }
+  document.getElementById("cabinetLead").textContent = CABINET.lead || "";
+  const view = all.slice(0, cabShown);
+  cabinetGrid.innerHTML = view
+    .map(
+      (s, i) => `
+      <button type="button" class="shot" data-i="${i}">
+        <img src="${esc(s.thumb)}" alt="${esc(s.caption)}" loading="lazy" decoding="async">
+        <span class="shot-cap">${esc(s.caption)}</span>
+      </button>`
+    )
+    .join("");
+
+  const rest = all.length - view.length;
+  cabinetMoreWrap.hidden = rest <= 0;
+  if (rest > 0) {
+    cabinetMoreBtn.innerHTML =
+      `<span class="more-arrow" aria-hidden="true">↓</span>` +
+      `<span>あと${Math.min(CAB_PAGE, rest)}枚を表示</span>` +
+      `<span class="more-rest mono">残り ${rest}</span>`;
+  }
+}
+
+cabinetMoreBtn.addEventListener("click", () => {
+  const before = cabinetGrid.querySelectorAll(".shot").length;
+  cabShown += CAB_PAGE;
+  renderCabinet();
+  const shots = cabinetGrid.querySelectorAll(".shot");
+  if (shots[before]) shots[before].focus({ preventScroll: true });
+});
+
+cabinetGrid.addEventListener("click", (e) => {
+  const b = e.target.closest(".shot");
+  if (b) openCabinet(Number(b.dataset.i));
+});
+
+function openCabinet(start) {
+  const all = cabShots();
+  if (!all.length) return;
+  gallery = null;
+
+  const shots = all.map((s) => s.image);
+  const tiles = all.map((s) => s.thumb);
+  const caps = all.map((s) => s.caption);
+
+  modalBody.innerHTML = `
+    ${galleryMarkup(shots, tiles, "キャビネット収納イメージ", start)}
+    <div class="modal-text">
+      <p class="work-cat mono">キャビネット収納イメージ</p>
+      <h3 id="galleryCaption">${esc(caps[start])}</h3>
+      <p>手持ちの工具を実測して設計したホルダーで、引き出しを1段ずつ埋めています。</p>
+      <div class="modal-actions"><a class="btn btn-primary" href="#shop" data-close>ショップで探す</a></div>
+      <ul class="modal-notes note">${(typeof COMMON_NOTES !== "undefined" ? COMMON_NOTES : [])
+        .map((n) => `<li>${esc(n)}</li>`)
+        .join("")}</ul>
+    </div>`;
+
+  setupGallery(shots, start, caps);
+  if (!modal.open) modal.showModal();
+}
+
 let gallery = null; // { shots, i, show } — 開いている作品のギャラリー
 
-function setupGallery(shots) {
+function setupGallery(shots, start = 0, captions = null) {
   const main = modalBody.querySelector("#galleryMain");
   const idx = modalBody.querySelector("#galleryIndex");
   const strip = modalBody.querySelector(".gallery-strip");
+  const cap = modalBody.querySelector("#galleryCaption");
 
   const show = (n) => {
     gallery.i = (n + shots.length) % shots.length;
     main.src = shots[gallery.i];
     idx.textContent = gallery.i + 1;
+    if (cap && captions) cap.textContent = captions[gallery.i];
     strip.querySelectorAll("button").forEach((b, k) => b.setAttribute("aria-selected", k === gallery.i));
     const active = strip.children[gallery.i];
     if (active) active.scrollIntoView({ block: "nearest", inline: "nearest" });
   };
-  gallery = { shots, i: 0, show };
+  gallery = { shots, i: start, show };
 
   strip.addEventListener("click", (e) => {
     const b = e.target.closest("button[data-i]");
@@ -260,3 +347,4 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 renderFilters();
 renderWorks();
+renderCabinet();

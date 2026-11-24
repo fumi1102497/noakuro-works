@@ -66,6 +66,25 @@ def write_list(photos, meta, default_status, order):
                 "/".join(p["folder"].split("/")[1:]) or p["folder"]))
 
 
+def cabinet_js():
+    """キャビネット収納イメージ（img(メーカー別)/cabinet/）を JS の配列にする。"""
+    site_p = os.path.join(HERE, "site-map.json")
+    data_p = os.path.join(HERE, "cabinet-data.json")
+    if not (os.path.exists(site_p) and os.path.exists(data_p)):
+        return "const CABINET = { lead: \"\", shots: [] };"
+    n = json.load(open(site_p, encoding="utf-8")).get("albums", {}).get("cabinet", 0)
+    d = json.load(open(data_p, encoding="utf-8"))
+    caps = d.get("captions", {})
+    shots = [{"image": "images/cabinet/%02d.webp" % i,
+              "thumb": "images/cabinet/%02d-t.webp" % i,
+              "caption": caps.get("%02d" % i, "")} for i in range(1, n + 1)]
+    missing = [s["image"] for s in shots if not s["caption"]]
+    if missing:
+        print("（説明文のない写真 %d 枚：tools/cabinet-data.json に足してください）" % len(missing))
+    return "const CABINET = %s;" % json.dumps({"lead": d.get("lead", ""), "shots": shots},
+                                              ensure_ascii=False)
+
+
 def main():
     data = json.load(open(os.path.join(HERE, "works-data.json"), encoding="utf-8"))
     photos = json.load(open(os.path.join(HERE, "works-map.json"), encoding="utf-8"))
@@ -123,6 +142,7 @@ def main():
         "   直接編集しないでください。",
         "     文章・型番・カテゴリ → tools/works-data.json",
         "     写真               → img(メーカー別)/ ＋ tools/build_images.py",
+        "     キャビネットの説明文 → tools/cabinet-data.json",
         "   ============================================================ */",
         "const WORKS = [",
         ",\n".join(entries),
@@ -135,6 +155,8 @@ def main():
         "];",
         "",
         "const COMMON_NOTES = %s;" % json.dumps(COMMON_NOTES, ensure_ascii=False),
+        "",
+        cabinet_js(),
         "",
     ]
     os.makedirs(os.path.dirname(OUT), exist_ok=True)

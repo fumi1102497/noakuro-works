@@ -28,6 +28,8 @@ MAIN_EDGE, MAIN_Q = 1600, 80
 THUMB_EDGE, THUMB_Q = 400, 72
 FORCE = "--force" in sys.argv
 IMG_EXT = {".jpg", ".jpeg", ".png", ".webp"}
+# 1つのギャラリーとしてまとめるフォルダ（「#」で始まらないもののうち）
+ALBUMS = {"cabinet"}
 
 # メーカーフォルダ名 → (表示名, IDの頭)
 MAKER = {
@@ -128,9 +130,17 @@ def scan():
 
         # 先頭が「#」でないフォルダはサイト用の写真（作品ではない）
         if not parts[0].startswith("#"):
-            for f in imgs:
-                site.append({"folder": rel, "file": f,
-                             "out": "site/%s.webp" % slug(os.path.splitext(f)[0])})
+            if parts[0] in ALBUMS:
+                # まとめて1つのギャラリーにする（images/<フォルダ名>/01.webp ...）
+                for i, f in enumerate(imgs, 1):
+                    site.append({"folder": rel, "file": f, "album": parts[0],
+                                 "out": "%s/%02d.webp" % (parts[0], i),
+                                 "thumb": "%s/%02d-t.webp" % (parts[0], i)})
+            else:
+                for f in imgs:
+                    site.append({"folder": rel, "file": f, "album": "",
+                                 "out": "site/%s.webp" % slug(os.path.splitext(f)[0]),
+                                 "thumb": ""})
             continue
 
         maker_name, maker_slug = MAKER.get(parts[0], (parts[0].lstrip("#"), slug(parts[0].lstrip("#"))))
@@ -223,19 +233,34 @@ def main():
             if f not in keep:
                 os.remove(os.path.join(out_dir, f))
 
-    # --- サイト用の写真（工房写真など） ---
-    if site:
-        os.makedirs(os.path.join(DST, "site"), exist_ok=True)
-        for s in site:
-            src = os.path.join(SRC, s["folder"].replace("/", os.sep), s["file"])
-            convert(src, [(os.path.join(DST, s["out"].replace("/", os.sep)), MAIN_EDGE, MAIN_Q)], state)
-        keep = {os.path.basename(s["out"]) for s in site}
-        for f in os.listdir(os.path.join(DST, "site")):
+    # --- サイト用の写真（工房写真・キャビネットのギャラリー） ---
+    albums = {}
+    for sp in site:
+        d = os.path.dirname(sp["out"])
+        os.makedirs(os.path.join(DST, d), exist_ok=True)
+        src = os.path.join(SRC, sp["folder"].replace("/", os.sep), sp["file"])
+        outs = [(os.path.join(DST, sp["out"].replace("/", os.sep)), MAIN_EDGE, MAIN_Q)]
+        if sp["thumb"]:
+            outs.append((os.path.join(DST, sp["thumb"].replace("/", os.sep)), THUMB_EDGE, THUMB_Q))
+        convert(src, outs, state)
+        if sp["album"]:
+            albums[sp["album"]] = albums.get(sp["album"], 0) + 1
+    # そのフォルダから消えた写真の出力を掃除
+    for d in {os.path.dirname(sp["out"]) for sp in site}:
+        keep = {os.path.basename(sp["out"]) for sp in site if os.path.dirname(sp["out"]) == d}
+        keep |= {os.path.basename(sp["thumb"]) for sp in site
+                 if sp["thumb"] and os.path.dirname(sp["thumb"]) == d}
+        for f in os.listdir(os.path.join(DST, d)):
             if f not in keep:
-                os.remove(os.path.join(DST, "site", f))
+                os.remove(os.path.join(DST, d, f))
+
+    with open(os.path.join(HERE, "site-map.json"), "w", encoding="utf-8", newline="\n") as f:
+        json.dump({"albums": albums,
+                   "single": sorted(sp["out"] for sp in site if not sp["album"])},
+                  f, ensure_ascii=False, indent=1)
 
     # 作品フォルダごと消えた場合の掃除
-    ids = {w["id"] for w in works} | {"site"}
+    ids = {w["id"] for w in works} | {"site"} | set(albums)
     for d in os.listdir(DST):
         p = os.path.join(DST, d)
         if os.path.isdir(p) and d not in ids:
