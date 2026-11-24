@@ -19,7 +19,8 @@ const catLabel = (key) => (CATEGORIES.find((c) => c.key === key) || {}).label ||
 const statusClass = (s) => (s === "販売中" ? "is-sale" : s === "受注製作" ? "is-order" : "is-soon");
 const makersOf = (w) => [...new Set((w.makers || []).map((m) => m.maker))];
 
-const PAGE = 10; // 一度に表示する件数
+// 一度に表示する件数（PCは12件、スマホは10件。860pxはCSSの折り返し位置と同じ）
+const PAGE = window.matchMedia("(min-width: 861px)").matches ? 12 : 10;
 let curCat = "all";
 let curMaker = "all";
 let shown = PAGE;
