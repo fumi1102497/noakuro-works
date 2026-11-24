@@ -335,7 +335,10 @@ p { margin: 0 0 1em; }
      代わりにボタンを小さめにして、折り返しても縦に伸びすぎないようにする */
   .filters { gap: 6px; margin-bottom: 20px; }
   .filter-label + .filters { margin-bottom: 14px; }
-  .filters button { font-size: .78rem; padding: .38em .85em; gap: .4em; }
+  /* 行の余りを各ボタンで分け合って、右端を揃える。
+     長い名前どうしが1行に入らず折り返しても、半端な空きができない */
+  .filters button { font-size: .78rem; padding: .38em .85em; gap: .4em;
+                    flex: 1 1 auto; justify-content: center; }
   .f-count { font-size: .62rem; }
 }
 @media (max-width: 520px) {
