@@ -177,10 +177,10 @@ python tools/build_images.py --force  # 全部作り直す
 - [x] メーカー＋カテゴリの2軸フィルタ
 - [x] ショップ欄の出品者ページURL（メルカリ・ヤフオクとも設定済み）
 - [x] 個別の商品URLは載せない方針に決定
-- [ ] **`.gitignore` を作って `img(メーカー別)/` を除外する**（原本1.7GB。公開用リポジトリに入れてはいけない。`images/` の85MBだけ push する）
+- [x] `.gitignore` で `img(メーカー別)/`（原本1.7GB）を除外。push しているのは `images/` の85MBだけ
 - [ ] 工房写真を `index.html` の `#about`（`WORKSHOP PHOTO` の枠）に入れる
 - [ ] ドメインを決めて `CNAME.example` を `CNAME` にリネーム＋中身を書き換え（仮のドメインのまま置くと Pages がそれを独自ドメインとして扱うので、今は外してある）
-- [ ] GitHub リポジトリ作成 → push → Settings › Pages で `main` / `/(root)` を公開
+- [x] GitHub リポジトリ作成 → push → Pages 公開（https://github.com/fumi1102497/noakuro-works → https://fumi1102497.github.io/noakuro-works/ ）
 - [ ] DNS 設定（www は CNAME → `ユーザー名.github.io`、apex は GitHub 指定の A レコード4つ）→ Enforce HTTPS
 - [ ] Settings › Pages の Verified domains でドメイン認証（乗っ取り対策）
 - [ ] スマホ実機で表示確認（ここまではPCとブラウザの375px表示でのみ確認済み）

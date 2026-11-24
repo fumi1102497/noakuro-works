@@ -30,10 +30,16 @@ CNAME.example           独自ドメイン名のひな形。ドメインが決�
 個別の商品ページURLは載せない方針（売り切れ・再出品でURLが変わるため）。
 作品詳細の「ショップで探す」はページ下部のショップ欄へ飛ぶ。
 
+## 公開先
+
+- リポジトリ: https://github.com/fumi1102497/noakuro-works
+- 公開URL: https://fumi1102497.github.io/noakuro-works/
+
+更新は `git add -A && git commit -m "..." && git push` だけ。1〜2分で反映される。
+
 ## まだ差し替えが必要なところ
-1. **`.gitignore`**：`img(メーカー別)/`（写真の原本・1.7GB）を除外する。push するのは `images/` の85MBだけ
-2. **工房写真**：`index.html` の `#about` 内、`WORKSHOP PHOTO` の枠
-3. **CNAME**：ドメインを決めたら `CNAME.example` を `CNAME` にリネームして中身を書き換える（仮の `example.com` のまま置くと Pages がそれを独自ドメインとして扱ってしまうので、今は外してある）
+1. **工房写真**：`index.html` の `#about` 内、`WORKSHOP PHOTO` の枠
+2. **CNAME**：ドメインを決めたら `CNAME.example` を `CNAME` にリネームして中身を書き換える（仮の `example.com` のまま置くと Pages がそれを独自ドメインとして扱ってしまうので、今は外してある）
 
 ## ローカルで確認
 ```
