@@ -15,7 +15,7 @@ tools/works-map.json    作品IDと写真の対応 ★自動生成
 tools/works-list.md     確認用の作品一覧 ★自動生成
 tools/build_images.py   写真の変換（EXIF削除・WebP化）
 tools/build_works.py    js/works.js の生成
-CNAME.example           独自ドメイン名のひな形。ドメインが決まったら CNAME にリネームする
+CNAME                   独自ドメイン名（noakuro.com）。消すと github.io のURLに戻る
 ```
 
 `js/works.js` と `images/` は自動生成なので直接編集しない。
@@ -38,12 +38,9 @@ CNAME.example           独自ドメイン名のひな形。ドメインが決�
 ## 公開先
 
 - リポジトリ: https://github.com/fumi1102497/noakuro-works
-- 公開URL: https://fumi1102497.github.io/noakuro-works/
+- 公開URL: **https://noakuro.com**（`www.` や `fumi1102497.github.io/noakuro-works/` からも転送される）
 
 更新は `git add -A && git commit -m "..." && git push` だけ。1〜2分で反映される。
-
-## まだ差し替えが必要なところ
-1. **CNAME**：ドメインを決めたら `CNAME.example` を `CNAME` にリネームして中身を書き換える（仮の `example.com` のまま置くと Pages がそれを独自ドメインとして扱ってしまうので、今は外してある）
 
 ## ローカルで確認
 ```
@@ -57,14 +54,21 @@ python -m http.server 8765
 3. Settings → Pages → Source:「Deploy from a branch」→ `main` / `/(root)` を選んで Save
 4. `https://ユーザー名.github.io/リポジトリ名/` で表示を確認
 
-## 独自ドメイン
-1. ドメインを取得（お名前.com、Cloudflare、Squarespace など）
-2. DNS 設定
-   - `www.example.com` で使う → CNAME レコード：`www` → `ユーザー名.github.io`
-   - `example.com`（apex）で使う → A レコード 4つ：
-     `185.199.108.153` / `185.199.109.153` / `185.199.110.153` / `185.199.111.153`
-3. Settings → Pages → Custom domain にドメインを入力 → DNS 反映後「Enforce HTTPS」にチェック
-4. 事前に Settings → Pages の「Verified domains」でドメイン認証しておくと乗っ取り対策になる
+## 独自ドメイン（設定済み）
+お名前.com で `noakuro.com` を取得し、下記の通り設定済み。
 
-※ DNS の値は変わることがあるので、設定時は GitHub 公式ドキュメント
-「Managing a custom domain for your GitHub Pages site」で最新値を確認してください。
+- DNS（お名前.com）
+  - apex `noakuro.com` → A レコード 4つ：
+    `185.199.108.153` / `185.199.109.153` / `185.199.110.153` / `185.199.111.153`
+  - `www` → CNAME レコード：`fumi1102497.github.io`
+- GitHub → Settings → Pages
+  - Custom domain: `noakuro.com`（リポジトリ直下の `CNAME` ファイルはこの欄から作られる）
+  - Enforce HTTPS: ON
+  - Verified domains: 認証済み（乗っ取り対策）
+
+`http://` も `www.` も `fumi1102497.github.io/noakuro-works/` も、すべて `https://noakuro.com/` に転送される。
+
+**`CNAME` ファイルを消すと独自ドメインが外れる。** 自動生成ではないので、ビルドスクリプトで消えることはない。
+
+※ DNS の値は変わることがあるので、設定し直すときは GitHub 公式ドキュメント
+「Managing a custom domain for your GitHub Pages site」で最新値を確認すること。

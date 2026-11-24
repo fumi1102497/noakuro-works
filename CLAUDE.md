@@ -1,7 +1,7 @@
 # のあくろ工房 ホームページ — 作業メモ
 
 3Dプリント製の工具ホルダーを紹介するサイト。作品を見てもらい、メルカリ・ヤフオクでの購入・受注につなげるのが目的。
-GitHub Pages ＋ 独自ドメイン（ドメインは検討中）で公開予定。
+GitHub Pages ＋ 独自ドメイン **https://noakuro.com** で公開中。
 
 ---
 
@@ -11,7 +11,7 @@ GitHub Pages ＋ 独自ドメイン（ドメインは検討中）で公開予定
 |---|---|
 | 工房名 | のあくろ工房（ロゴ下の英字は仮で `NOAKURO 3D PRINT WORKS`） |
 | 目的 | 作品紹介 → メルカリ・ヤフオクの**出品者ページ**へ誘導。カスタム相談は出品ページのコメントで受ける |
-| 公開先 | GitHub Pages（静的サイト。サーバー処理なし） |
+| 公開先 | https://noakuro.com （GitHub Pages。静的サイトでサーバー処理なし） |
 | 構成 | 素のHTML / CSS / JavaScript（ビルドツールなし。写真とデータの生成だけ Python） |
 | デザイン | 工房・工具箱をイメージしたダーク＋オレンジ（`--accent: #ff5a1f`）。見出しは Zen Kaku Gothic New、英数字は JetBrains Mono |
 
@@ -52,7 +52,7 @@ tools/works-list.md     確認用の作品一覧 ★自動生成
 tools/build_images.py   写真の変換（EXIF削除・WebP化）
 tools/build_works.py    js/works.js と works-list.md の生成
 .claude/launch.json     ローカル確認用サーバーの設定
-CNAME.example           独自ドメイン名のひな形（ドメインが決まったら CNAME にリネーム）
+CNAME                   独自ドメイン名（noakuro.com）。消すと github.io のURLに戻る
 README.md               差し替え箇所と GitHub Pages の公開手順
 ```
 
@@ -206,10 +206,10 @@ python tools/build_images.py --force  # 全部作り直す
 - [x] 個別の商品URLは載せない方針に決定
 - [x] `.gitignore` で `img(メーカー別)/`（原本1.7GB）を除外。push しているのは `images/` の85MBだけ
 - [x] 工房について欄の写真（`img(メーカー別)/HP/top_pic.jpg` → `images/site/top-pic.webp`）
-- [ ] ドメインを決めて `CNAME.example` を `CNAME` にリネーム＋中身を書き換え（仮のドメインのまま置くと Pages がそれを独自ドメインとして扱うので、今は外してある）
-- [x] GitHub リポジトリ作成 → push → Pages 公開（https://github.com/fumi1102497/noakuro-works → https://fumi1102497.github.io/noakuro-works/ ）
-- [ ] DNS 設定（www は CNAME → `ユーザー名.github.io`、apex は GitHub 指定の A レコード4つ）→ Enforce HTTPS
-- [ ] Settings › Pages の Verified domains でドメイン認証（乗っ取り対策）
+- [x] GitHub リポジトリ作成 → push → Pages 公開（https://github.com/fumi1102497/noakuro-works ）
+- [x] ドメイン取得（お名前.com）→ `CNAME` に `noakuro.com`（GitHub の Custom domain 欄から作られたファイル）
+- [x] DNS 設定（apex は A レコード4つ、www は CNAME → `fumi1102497.github.io`）→ Enforce HTTPS 済み
+- [x] Settings › Pages の Verified domains でドメイン認証（乗っ取り対策）済み
 - [ ] スマホ実機で表示確認（ここまではPCとブラウザの375px表示でのみ確認済み）
 
 ### ローカルで確認
