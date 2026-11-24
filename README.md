@@ -13,7 +13,7 @@ tools/works-map.json    作品IDと写真の対応 ★自動生成
 tools/works-list.md     確認用の作品一覧 ★自動生成
 tools/build_images.py   写真の変換（EXIF削除・WebP化）
 tools/build_works.py    js/works.js の生成
-CNAME                   独自ドメイン名（1行だけ）
+CNAME.example           独自ドメイン名のひな形。ドメインが決まったら CNAME にリネームする
 ```
 
 `js/works.js` と `images/` は自動生成なので直接編集しない。
@@ -33,7 +33,7 @@ CNAME                   独自ドメイン名（1行だけ）
 ## まだ差し替えが必要なところ
 1. **`.gitignore`**：`img(メーカー別)/`（写真の原本・1.7GB）を除外する。push するのは `images/` の85MBだけ
 2. **工房写真**：`index.html` の `#about` 内、`WORKSHOP PHOTO` の枠
-3. **CNAME**：`example.com` を取得したドメインに
+3. **CNAME**：ドメインを決めたら `CNAME.example` を `CNAME` にリネームして中身を書き換える（仮の `example.com` のまま置くと Pages がそれを独自ドメインとして扱ってしまうので、今は外してある）
 
 ## ローカルで確認
 ```
