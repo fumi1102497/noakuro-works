@@ -260,7 +260,7 @@ python tools/build_images.py --force  # 全部作り直す
 - [x] Settings › Pages の Verified domains でドメイン認証（乗っ取り対策）済み
 - [x] robots.txt / sitemap.xml を設置（画像に焼き込んだ文字は検索に拾われないので、
       型番は `works-data.json` の `target` に書くこと）
-- [ ] Google Search Console にドメインを登録して sitemap.xml を送信（要・本人作業）
+- [x] Google Search Console にドメインを登録（TXTレコードで認証済み）して sitemap.xml を送信
 - [ ] スマホ実機で表示確認（ここまではPCとブラウザの375px表示でのみ確認済み）
 
 ### ローカルで確認
