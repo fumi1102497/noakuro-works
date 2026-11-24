@@ -86,7 +86,10 @@ makerFilters.addEventListener("click", (e) => {
 function cardHtml(w) {
   return `
       <article class="work-card" tabindex="0" data-id="${esc(w.id)}">
-        <div class="work-thumb">${thumb(w)}<span class="status ${statusClass(w.status)}">${esc(w.status)}</span>${
+        <div class="work-thumb">${thumb(w)}${
+    // 「販売中」は全作品に付くのでバッジを出さない。準備中・受注製作のときだけ出す
+    w.status === "販売中" ? "" : `<span class="status ${statusClass(w.status)}">${esc(w.status)}</span>`
+  }${
     w.images && w.images.length > 1 ? `<span class="shot-count mono">${w.images.length}</span>` : ""
   }</div>
         <div class="work-info">
