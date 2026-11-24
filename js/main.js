@@ -316,31 +316,19 @@ nav.addEventListener("click", (e) => {
   }
 });
 
-/* ショップリンク — スマホではアプリで開く（アプリが無ければブラウザ） */
-const APP_PACKAGE = {
-  "jp.mercari.com": "com.kouzoh.mercari",
-  "auctions.yahoo.co.jp": "jp.co.yahoo.android.yauction"
-};
-const isAndroid = /Android/.test(navigator.userAgent);
-const isIOS =
-  /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+/* ショップリンク — スマホでは同じタブで開く
+   別タブ（target="_blank"）だと、OSがアプリに渡してくれないことがあるため。
+   Android の intent:// による起動は試したが、メルカリ・ヤフオクとも
+   「出品者ページ」はアプリの対象外でブラウザに戻されるだけだったので入れていない
+   （アプリ内ブラウザで intent:// がエラーになる副作用のほうが大きい）。 */
+const isPhone =
+  /Android|iPhone|iPad|iPod/.test(navigator.userAgent) ||
   (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
-if (isAndroid || isIOS) {
+if (isPhone) {
   document.querySelectorAll(".shop-card").forEach((a) => {
-    const web = a.href;
-    // iOS はユニバーサルリンク任せ。別タブで開くとアプリに渡らないことがあるので同じタブにする
     a.removeAttribute("target");
     a.removeAttribute("rel");
-    if (!isAndroid) return;
-    const u = new URL(web);
-    const pkg = APP_PACKAGE[u.hostname];
-    if (!pkg) return;
-    // アプリが無ければ browser_fallback_url（＝元のURL）に飛ぶ
-    a.href =
-      "intent://" + u.host + u.pathname + u.search +
-      "#Intent;scheme=https;package=" + pkg +
-      ";S.browser_fallback_url=" + encodeURIComponent(web) + ";end";
   });
 }
 
