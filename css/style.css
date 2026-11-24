@@ -330,14 +330,13 @@ p { margin: 0 0 1em; }
   .shot-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .shot-cap { padding: 8px 10px; font-size: .72rem; }
 
-  /* フィルターは縦に伸ばさず、1行の横スクロールにする */
-  .filters {
-    flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x proximity;
-    margin-inline: -20px; padding-inline: 20px;
-    scrollbar-width: none; -ms-overflow-style: none;
-  }
-  .filters::-webkit-scrollbar { display: none; }
-  .filters button { flex: 0 0 auto; scroll-snap-align: start; }
+  /* フィルターは折り返して画面に収める。
+     横スクロールにすると、隠れているメーカーやカテゴリに気づいてもらえない。
+     代わりにボタンを小さめにして、折り返しても縦に伸びすぎないようにする */
+  .filters { gap: 6px; margin-bottom: 20px; }
+  .filter-label + .filters { margin-bottom: 14px; }
+  .filters button { font-size: .78rem; padding: .38em .85em; gap: .4em; }
+  .f-count { font-size: .62rem; }
 }
 @media (max-width: 520px) {
   .flow { grid-template-columns: 1fr; }
