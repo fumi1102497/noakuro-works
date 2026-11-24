@@ -234,7 +234,7 @@ const WORKS = [
     id: "snapon-digital-torque-wrench",
     makers: [{"maker": "Snap-on", "model": "デジタルトルクレンチ"}],
     title: "デジタルトルクレンチホルダー",
-    category: "wrench",
+    category: "torque",
     status: "販売中",
     target: "Snap-on デジタルトルクレンチ",
     summary: "デジタルトルクレンチを寝かせて置くスタンドです。",
@@ -248,7 +248,7 @@ const WORKS = [
     id: "snapon-torque-wrench",
     makers: [{"maker": "Snap-on", "model": "QD3RN100"}, {"maker": "Snap-on", "model": "QD3RN200"}, {"maker": "Snap-on", "model": "QD3RN350"}],
     title: "トルクレンチホルダー",
-    category: "wrench",
+    category: "torque",
     status: "販売中",
     target: "Snap-on QD3RN100 / QD3RN200 / QD3RN350",
     summary: "トルクレンチのヘッドを受けて立て掛けるスタンドです。",
@@ -1440,11 +1440,12 @@ const MAKER_ORDER = ["Snap-on", "Ko-ken", "KTC", "NEPROS", "PB SWISS TOOLS", "SI
 
 const CATEGORIES = [
   { key: "all", label: "すべて" },
-  { key: "socket", label: "ソケット・ビット" },
-  { key: "ratchet", label: "ラチェット・ハンドル" },
+  { key: "ratchet", label: "ラチェットハンドル" },
   { key: "extension", label: "エクステンションバー" },
-  { key: "driver", label: "ドライバー・六角" },
-  { key: "wrench", label: "レンチ・トルクレンチ" },
+  { key: "socket", label: "ソケット" },
+  { key: "driver", label: "ドライバー" },
+  { key: "wrench", label: "レンチ" },
+  { key: "torque", label: "トルクレンチ" },
   { key: "hand", label: "ハンドツール" },
   { key: "grip", label: "グリップ" }
 ];

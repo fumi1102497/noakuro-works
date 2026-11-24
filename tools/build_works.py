@@ -22,11 +22,12 @@ MAKER_ORDER = [
 
 CATEGORIES = [
     ("all",       "すべて"),
-    ("socket",    "ソケット・ビット"),
-    ("ratchet",   "ラチェット・ハンドル"),
+    ("ratchet",   "ラチェットハンドル"),
     ("extension", "エクステンションバー"),
-    ("driver",    "ドライバー・六角"),
-    ("wrench",    "レンチ・トルクレンチ"),
+    ("socket",    "ソケット"),
+    ("driver",    "ドライバー"),
+    ("wrench",    "レンチ"),
+    ("torque",    "トルクレンチ"),
     ("hand",      "ハンドツール"),
     ("grip",      "グリップ"),
 ]

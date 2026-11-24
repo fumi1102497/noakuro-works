@@ -109,17 +109,24 @@ README.md               差し替え箇所と GitHub Pages の公開手順
 
 ### カテゴリ（`build_works.py` の `CATEGORIES`）
 
+表示順は `CATEGORIES` の並び順そのまま（フィルターのボタンもこの順に出る）。`all` は先頭に置く。
+
 | key | 表示名 | 件数 |
 |---|---|---|
-| socket | ソケット・ビット | 21 |
-| ratchet | ラチェット・ハンドル | 31 |
+| ratchet | ラチェットハンドル | 31 |
 | extension | エクステンションバー | 14 |
-| driver | ドライバー・六角 | 9 |
-| wrench | レンチ・トルクレンチ | 8 |
+| socket | ソケット | 21 |
+| driver | ドライバー | 9 |
+| wrench | レンチ | 6 |
+| torque | トルクレンチ | 2 |
 | hand | ハンドツール | 18 |
 | grip | グリップ | 1 |
 
 **分類の軸は「工具の種類」**。壁掛け・直置きといった取り付け方で分けると軸が混ざるので、それは `specs` に書く。
+
+**key は `works-data.json` の `category` と対応している**ので、key を変えるときは両方を直す（片方だけだとビルドが止まる）。
+表示名だけなら `CATEGORIES` を直して `python tools/build_works.py` を流せばよい。
+カテゴリを増やすときは `CATEGORIES` に1行足して、該当作品の `category` を書き換える。
 
 ### メーカー（`MAKER_ORDER` の順）
 
