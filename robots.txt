@@ -1,0 +1,6 @@
+# のあくろ工房 — 検索エンジン向けの案内
+# 全ページ巡回してよい（制限しているものは無い）
+User-agent: *
+Allow: /
+
+Sitemap: https://noakuro.com/sitemap.xml
