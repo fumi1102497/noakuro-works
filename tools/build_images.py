@@ -11,8 +11,10 @@
   1. EXIF の向き（Orientation）を実際の回転として焼き込む
   2. EXIF / GPS / ICC などのメタデータを全部捨てる（自宅の位置情報が漏れないように）
   3. 長辺 1600px の WebP = 本体、長辺 400px の WebP = サムネイル を出力
+  4. HP/og.jpg だけは SNS 用に 1200x630 の JPEG に切り抜く
   出力先: 作品    images/<作品ID>/01.webp, 01-t.webp, 02.webp, ...
           サイト  images/site/<ファイル名>.webp
+          OG画像  images/og.jpg
 """
 import json, os, re, sys, unicodedata
 from collections import Counter
@@ -30,6 +32,13 @@ FORCE = "--force" in sys.argv
 IMG_EXT = {".jpg", ".jpeg", ".png", ".webp"}
 # 1つのギャラリーとしてまとめるフォルダ（「#」で始まらないもののうち）
 ALBUMS = {"cabinet"}
+
+# OG画像（SNSやLINEにURLを貼ったときに出るサムネ）
+# WebPだと表示されないサービスがあるので、これだけJPEGで書き出す。
+# 写真を変えるときは img(メーカー別)/HP/og.jpg を差し替える。
+# OG_FOCUS は縦のどこを残すか。0=上端 / 0.5=中央 / 1=下端
+OG_SRC, OG_OUT = "HP/og.jpg", "og.jpg"
+OG_SIZE, OG_FOCUS, OG_Q = (1200, 630), 0.33, 85
 
 # メーカーフォルダ名 → (表示名, IDの頭)
 MAKER = {
@@ -138,6 +147,8 @@ def scan():
                                  "thumb": "%s/%02d-t.webp" % (parts[0], i)})
             else:
                 for f in imgs:
+                    if "%s/%s" % (rel, f) == OG_SRC:
+                        continue  # OG画像は別扱い（build_og）
                     site.append({"folder": rel, "file": f, "album": "",
                                  "out": "site/%s.webp" % slug(os.path.splitext(f)[0]),
                                  "thumb": ""})
@@ -189,6 +200,48 @@ def save(im, path, q):
     out = Image.frombytes(im.mode, im.size, im.tobytes())
     out.save(tmp, "WEBP", quality=q, method=6, exif=b"", icc_profile=None, xmp=b"")
     os.replace(tmp, path)
+
+
+def crop_to(im, size, focus):
+    """size の比率に合わせて切り抜いてから size ぴったりに縮める。"""
+    w, h = im.size
+    tw, th = size
+    ar = tw / th
+    if w / h > ar:
+        cw, ch = round(h * ar), h   # 横長すぎる → 左右を削る
+    else:
+        cw, ch = w, round(w / ar)   # 縦長すぎる → 上下を削る
+    x = (w - cw) // 2
+    y = round((h - ch) * focus)
+    return im.crop((x, y, x + cw, y + ch)).resize(size, Image.LANCZOS)
+
+
+def save_jpg(im, path, q):
+    tmp = path + ".tmp"
+    # save() と同じく、生のピクセルから作り直してメタデータを落とす
+    out = Image.frombytes(im.mode, im.size, im.tobytes())
+    out.save(tmp, "JPEG", quality=q, optimize=True, exif=b"", icc_profile=None)
+    os.replace(tmp, path)
+
+
+def build_og(state):
+    """HP/og.jpg を 1200x630 に切り抜いて images/og.jpg にする。"""
+    src = os.path.join(SRC, OG_SRC.replace("/", os.sep))
+    out = os.path.join(DST, OG_OUT)
+    if not os.path.exists(src):
+        if os.path.exists(out):
+            os.remove(out)
+        return False
+    if not FORCE and os.path.exists(out) and os.path.getmtime(out) >= os.path.getmtime(src):
+        state["skipped"] += 1
+        return True
+    with Image.open(src) as im0:
+        im = ImageOps.exif_transpose(im0)
+        if im.mode != "RGB":
+            im = im.convert("RGB")
+        save_jpg(crop_to(im, OG_SIZE, OG_FOCUS), out, OG_Q)
+    state["done"] += 1
+    return True
 
 
 def convert(src, outs, state):
@@ -254,9 +307,13 @@ def main():
             if f not in keep:
                 os.remove(os.path.join(DST, d, f))
 
+    # --- OG画像 ---
+    og = build_og(state)
+
     with open(os.path.join(HERE, "site-map.json"), "w", encoding="utf-8", newline="\n") as f:
         json.dump({"albums": albums,
-                   "single": sorted(sp["out"] for sp in site if not sp["album"])},
+                   "single": sorted(sp["out"] for sp in site if not sp["album"]),
+                   "og": OG_OUT if og else ""},
                   f, ensure_ascii=False, indent=1)
 
     # 作品フォルダごと消えた場合の掃除
@@ -273,6 +330,8 @@ def main():
     print("作品 %d 件 / 写真 %d 枚" % (len(works), sum(w["count"] for w in works)))
     if site:
         print("サイト用の写真 %d 枚: %s" % (len(site), ", ".join("images/" + s["out"] for s in site)))
+    if og:
+        print("OG画像: images/%s（%dx%d）" % (OG_OUT, OG_SIZE[0], OG_SIZE[1]))
     print("変換 %d 枚 / スキップ %d 枚" % (state["done"], state["skipped"]))
     print("images/ 合計 %.1f MB" % (total / 1024 / 1024))
     if state["rotated"]:

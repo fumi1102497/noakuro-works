@@ -4,5 +4,6 @@
  },
  "single": [
   "site/top-pic.webp"
- ]
+ ],
+ "og": "og.jpg"
 }

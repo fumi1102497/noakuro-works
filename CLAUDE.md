@@ -45,6 +45,7 @@ css/style.css           デザイン（色・フォントは :root の変数で�
 js/works.js             作品データ（WORKS 配列）★自動生成
 js/main.js              画面の動き（フィルタ・モーダル・ギャラリー）
 images/<作品ID>/        Web用の写真 NN.webp と NN-t.webp（サムネ）★自動生成
+images/og.jpg           SNS用のサムネ（1200x630）★自動生成
 img(メーカー別)/        写真の原本（1.7GB。公開用リポジトリには入れない）
 tools/works-data.json   作品の文章・型番・カテゴリ ← 手で直すのはここ
 tools/works-map.json    作品IDと写真の対応 ★自動生成
@@ -155,6 +156,7 @@ img(メーカー別)/
     インパクトソケット/   ← 2階層で終わる作品もある
   HP/                  ← 「#」で始まらないフォルダ = サイト用の写真（作品ではない）
     top_pic.jpg        → images/site/top-pic.webp
+    og.jpg             → images/og.jpg（SNS用。これだけ特別扱い）
   cabinet/             ← ギャラリーにまとめるフォルダ（build_images.py の ALBUMS）
     IMG...113311.jpg   → images/cabinet/01.webp ＋ 01-t.webp（ファイル名順に連番）
 ```
@@ -165,6 +167,10 @@ img(メーカー別)/
   - `cabinet/` → `images/cabinet/NN.webp`（連番のギャラリー）。説明文は `tools/cabinet-data.json` に番号で書く。
     **写真を入れ替えると番号がずれる**ので、増減させたら説明文を付け直すこと（説明文のない写真があると `build_works.py` が警告を出す）
   - ギャラリーにまとめるフォルダは `build_images.py` の `ALBUMS` で指定する
+  - `HP/og.jpg` だけは特別扱い。**SNSやLINEにURLを貼ったときに出るサムネ**として、
+    1200x630 に切り抜いた **JPEG** を `images/og.jpg` に出す（WebPだと表示されないサービスがあるため）。
+    どんな比率の写真でも中央で切り抜く。縦のどこを残すかは `build_images.py` の `OG_FOCUS`
+    （0=上端 / 0.5=中央 / 1=下端。今は 0.33）
 - **メイン写真はフォルダ内の最初のファイル**。全角数字（`０.jpg`）も半角に直して並べ替えるので `０` が先頭に来る
 - メイン写真の多くは**出品用バナー**で、作品名・対応型番・「※工具は付属しません」「※カラー変更可能(全16色)」が画像に焼き込まれている。
   `tools/works-data.json` の型番はこのバナーから読み取った

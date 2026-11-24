@@ -28,6 +28,7 @@ CNAME                   独自ドメイン名（noakuro.com）。消すと githu
 | 写真を足す・差し替える | `img(メーカー別)/` | `python tools/build_images.py` → `python tools/build_works.py` |
 | 新しい作品を足す | 上の両方 | 上の両方 |
 | サイト用の写真を変える | `img(メーカー別)/HP/` | `python tools/build_images.py` |
+| SNSのサムネを変える | `img(メーカー別)/HP/og.jpg` | `python tools/build_images.py` |
 | 収納イメージの写真を変える | `img(メーカー別)/cabinet/` | `python tools/build_images.py` → `python tools/build_works.py` |
 | 収納イメージの説明文 | `tools/cabinet-data.json` | `python tools/build_works.py` |
 | 販売状態を変える | `tools/works-data.json` に `"status": "準備中"` | `python tools/build_works.py` |
