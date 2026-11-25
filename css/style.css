@@ -415,9 +415,19 @@ p { margin: 0 0 1em; }
   /* ヘッダーのすぐ下が空きすぎて見えるので詰める（PCは clamp のまま）。
      見出しの行間ぶん、実際の見た目はこの値より5pxほど広くなる */
   .hero { padding-top: 24px; }
-  /* 1カラムにして、写真は文章（PRINTERS などの数字）の下に置く。
-     縦に長くなりすぎないよう、写真は横長に切り出す */
-  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  /* 1カラムにして、写真は説明文と「ホルダーを見る」ボタンのあいだに置く。
+     写真は .hero-copy の外にあるので、display:contents で中身を直接グリッドに並べ、
+     order で順番を決めている（HTMLの並びは変えていない）。
+     縦に長くなりすぎないよう、写真は横長に切り出す。
+     余白は各要素が元から持っている margin に任せるので gap は 0 */
+  .hero-inner { grid-template-columns: 1fr; gap: 0; }
+  .hero-copy { display: contents; }
+  .hero-copy > .eyebrow { order: 1; }
+  .hero-copy > h1 { order: 2; }
+  .hero-copy > .lead { order: 3; }
+  .hero-shot { order: 4; margin: .4em 0 .2em; }
+  .hero-copy > .hero-actions { order: 5; }
+  .hero-copy > .hero-stats { order: 6; }
   .hero-shot img { aspect-ratio: 16 / 10; }
 
   /* 見出しの長いほうの行「収納ホルダーを作ります。」が1行に収まる大きさ。
