@@ -50,21 +50,30 @@
     <section class="hero">
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="wrap hero-inner">
-        <p class="eyebrow mono">// 3D PRINTED TOOL STORAGE</p>
-        <h1>工具箱にキレイに収まる<br>収納ホルダーを作ります。</h1>
-        <p class="lead">
-          ラチェットやソケット、レンチなど、お持ちの工具に合わせて専用ホルダーを製作しています。<br>
-          工具を実際に採寸し、工具箱や引き出しのサイズに合わせて設計します。
-        </p>
-        <div class="hero-actions">
-          <a href="#works" class="btn btn-primary">ホルダーを見る</a>
-          <a href="#custom" class="btn btn-ghost">カスタム製作の相談</a>
+        <div class="hero-copy">
+          <p class="eyebrow mono">// 3D PRINTED TOOL STORAGE</p>
+          <h1>工具箱にキレイに収まる<br>収納ホルダーを作ります。</h1>
+          <p class="lead">
+            ラチェットやソケット、レンチなど、お持ちの工具に合わせて専用ホルダーを製作しています。<br>
+            工具を実際に採寸し、工具箱や引き出しのサイズに合わせて設計します。
+          </p>
+          <div class="hero-actions">
+            <a href="#works" class="btn btn-primary">ホルダーを見る</a>
+            <a href="#custom" class="btn btn-ghost">カスタム製作の相談</a>
+          </div>
+          <dl class="hero-stats mono">
+            <div><dt>PRINTERS</dt><dd>6<span>台</span></dd></div>
+            <div><dt>DESIGN</dt><dd>サイズ調整対応 / オーダー設計対応</dd></div>
+            <div><dt>SHIPPING</dt><dd>ネコポス・クリックポスト対応</dd></div>
+          </dl>
         </div>
-        <dl class="hero-stats mono">
-          <div><dt>PRINTERS</dt><dd>6<span>台</span></dd></div>
-          <div><dt>DESIGN</dt><dd>サイズ調整対応 / オーダー設計対応</dd></div>
-          <div><dt>SHIPPING</dt><dd>ネコポス・クリックポスト対応</dd></div>
-        </dl>
+        <!-- ヒーローの写真。img(メーカー別)/HP/hero.jpg を差し替えて
+             python tools/build_images.py で入れ替わる -->
+        <figure class="hero-shot">
+          <img src="images/site/hero.webp" width="1600" height="1200"
+               alt="3Dプリント製のホルダーに1本ずつ並べて収納したラチェットハンドル"
+               fetchpriority="high" decoding="async">
+        </figure>
       </div>
     </section>
 
