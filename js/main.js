@@ -243,44 +243,78 @@ cabinetGrid.addEventListener("click", (e) => {
   if (b) openCabinet(Number(b.dataset.i));
 });
 
-function openCabinet(start) {
-  const all = cabShots();
-  if (!all.length) return;
-  gallery = null;
+/* ---------- 写真の最大化表示（ライトボックス） ----------
+   引き出しの中を見てもらう写真なので、ホルダー詳細のモーダル（写真が半分の幅）ではなく
+   画面いっぱいに出す専用のダイアログを使う。
+   閉じる・前へ・次へ のボタンのほか、Esc と左右キー、写真の外側を押しても操作できる。 */
 
-  const shots = all.map((s) => s.image);
-  const tiles = all.map((s) => s.thumb);
-  const caps = all.map((s) => s.caption);
+const lightbox = document.getElementById("shotLightbox");
+const lbImage = document.getElementById("lbImage");
+const lbCaption = document.getElementById("lbCaption");
+const lbIndex = document.getElementById("lbIndex");
+const lbTotal = document.getElementById("lbTotal");
+let lbShots = [];
+let lbAt = 0;
+let lbFrom = 0; // 開くきっかけになったサムネイルの番号（閉じたときフォーカスを戻す先）
 
-  modalBody.innerHTML = `
-    ${galleryMarkup(shots, tiles, "キャビネット収納イメージ", start)}
-    <div class="modal-text">
-      <p class="work-cat mono">キャビネット収納イメージ</p>
-      <h3 id="galleryCaption">${esc(caps[start])}</h3>
-      <p>手持ちの工具を実測して設計したホルダーで、引き出しを1段ずつ埋めています。</p>
-      <div class="modal-actions"><a class="btn btn-primary" href="#shop" data-close>ショップで探す</a></div>
-      <ul class="modal-notes note">${(typeof COMMON_NOTES !== "undefined" ? COMMON_NOTES : [])
-        .map((n) => `<li>${esc(n)}</li>`)
-        .join("")}</ul>
-    </div>`;
-
-  setupGallery(shots, start, caps);
-  if (!modal.open) modal.showModal();
+function lbShow(n) {
+  if (!lbShots.length) return;
+  lbAt = (n + lbShots.length) % lbShots.length; // 端まで行ったら反対側へ回る
+  const s = lbShots[lbAt];
+  lbImage.src = s.image;
+  lbImage.alt = s.caption;
+  lbCaption.textContent = s.caption;
+  lbIndex.textContent = lbAt + 1;
+  // 次の1枚を先に読み込んでおく（ボタンを押したときに一瞬空白になるのを防ぐ）
+  new Image().src = lbShots[(lbAt + 1) % lbShots.length].image;
 }
+
+function openCabinet(start) {
+  lbShots = cabShots();
+  if (!lbShots.length) return;
+  lbTotal.textContent = lbShots.length;
+  lbFrom = start;
+  lbShow(start);
+  if (!lightbox.open) lightbox.showModal();
+}
+
+lightbox.addEventListener("click", (e) => {
+  const btn = e.target.closest(".lb-btn");
+  if (!btn) {
+    // 写真の外（黒い余白）を押したときも閉じる
+    if (e.target === lightbox || e.target.classList.contains("lb-stage")) lightbox.close();
+    return;
+  }
+  if (btn.classList.contains("lb-close")) lightbox.close();
+  else if (btn.classList.contains("lb-prev")) lbShow(lbAt - 1);
+  else if (btn.classList.contains("lb-next")) lbShow(lbAt + 1);
+});
+
+lightbox.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") { e.preventDefault(); lbShow(lbAt + 1); }
+  if (e.key === "ArrowLeft") { e.preventDefault(); lbShow(lbAt - 1); }
+});
+
+// 閉じたらサムネイルへフォーカスを戻す。
+// 「あとN枚を表示」でまだ出していない写真まで送っていたら、開いたときのサムネイルに戻す
+lightbox.addEventListener("close", () => {
+  const back =
+    cabinetGrid.querySelector(`.shot[data-i="${lbAt}"]`) ||
+    cabinetGrid.querySelector(`.shot[data-i="${lbFrom}"]`);
+  if (back) back.focus({ preventScroll: true });
+});
 
 let gallery = null; // { shots, i, show } — 開いているホルダーのギャラリー
 
-function setupGallery(shots, start = 0, captions = null) {
+function setupGallery(shots, start = 0) {
   const main = modalBody.querySelector("#galleryMain");
   const idx = modalBody.querySelector("#galleryIndex");
   const strip = modalBody.querySelector(".gallery-strip");
-  const cap = modalBody.querySelector("#galleryCaption");
 
   const show = (n) => {
     gallery.i = (n + shots.length) % shots.length;
     main.src = shots[gallery.i];
     idx.textContent = gallery.i + 1;
-    if (cap && captions) cap.textContent = captions[gallery.i];
     strip.querySelectorAll("button").forEach((b, k) => b.setAttribute("aria-selected", k === gallery.i));
     const active = strip.children[gallery.i];
     if (active) active.scrollIntoView({ block: "nearest", inline: "nearest" });

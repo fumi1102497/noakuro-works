@@ -302,6 +302,20 @@
     <div class="modal-body" id="modalBody"></div>
   </dialog>
 
+  <!-- 写真の最大化表示（キャビネット収納イメージ用）。中身は js/main.js が入れ替える -->
+  <dialog id="shotLightbox" class="lightbox" aria-label="キャビネット収納イメージ">
+    <div class="lb-stage">
+      <img id="lbImage" src="" alt="">
+      <button type="button" class="lb-btn lb-close" aria-label="閉じる">×</button>
+      <button type="button" class="lb-btn lb-prev" aria-label="前の写真">‹</button>
+      <button type="button" class="lb-btn lb-next" aria-label="次の写真">›</button>
+    </div>
+    <div class="lb-bar">
+      <p class="lb-cap" id="lbCaption"></p>
+      <span class="lb-count mono"><span id="lbIndex">1</span> / <span id="lbTotal">1</span></span>
+    </div>
+  </dialog>
+
   <script src="js/works.js"></script>
   <script src="js/main.js"></script>
 </body>
