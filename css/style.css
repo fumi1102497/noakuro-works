@@ -223,6 +223,11 @@ p { margin: 0 0 1em; }
 
 /* ---------- Custom ---------- */
 .custom-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(30px, 6vw, 80px); align-items: center; }
+/* 見出しの2行目「ホルダーをオーダー制作します。」が1行に収まる大きさ。
+   15文字で約15.0em あるので、左カラムの幅（画面幅のおよそ 1/2.3）に入るよう 3vw にしている。
+   2.1rem は他の見出し（.section h2 の上限 2.4rem）より一段小さいところで頭打ちにする値。
+   見出しの文字数を増やすとまた3行目に「ます。」だけが残るので、変えたら横幅を確認すること */
+.custom-inner h2 { font-size: min(3vw, 2.1rem); }
 .custom-inner p { color: #c3c8cf; }
 .spec-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(255,255,255,.12); }
 .spec-list li { display: flex; gap: 18px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
@@ -391,6 +396,8 @@ p { margin: 0 0 1em; }
   .hero h1 { font-size: min(8.5vw, 2.1rem); }
 
   .custom-inner, .about-inner { grid-template-columns: 1fr; }
+  /* 1カラムになるぶん横幅が広がるので、PCより大きめで2行に収まる（320px幅でも折り返さない） */
+  .custom-inner h2 { font-size: min(5.7vw, 1.6rem); }
   .color-list { grid-template-columns: 1fr 1fr; gap: 6px 14px; }   /* 16色 = 2列×8行 */
   .flow { grid-template-columns: 1fr 1fr; }
   .flow li::after { display: none; }
