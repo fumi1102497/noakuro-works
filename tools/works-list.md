@@ -22,15 +22,15 @@
 | 11 | 汎用ラチェットホルダー 幅広 | Snap-on FHNF100 / FHOF80 / F80 / F100 | ラチェットハンドル | 販売中 | 6 | `snapon-ratchet-handle-fhkfd80-fhfd80a-wide` | `ラチェットハンドル/FHKFD80_FHFD80A/幅広` |
 | 12 | 汎用ラチェットホルダー 幅狭 | Snap-on FHKFD80A / FHFD80A / FHLFD80A | ラチェットハンドル | 販売中 | 6 | `snapon-ratchet-handle-fhkfd80-fhfd80a-narrow` | `ラチェットハンドル/FHKFD80_FHFD80A/幅狭` |
 | 13 | ブレーカーバーホルダー 450mm | Snap-on ブレーカーバー SN24C / SN15B / SN18B / F12LB / F18LA / FHBB12A / FHBB12AG / FHBB12AO / FHBB18A / FHBB18AG / FHBB18AO | ブレーカーバー | 販売中 | 7 | `snapon-breaker-bar` | `ブレーカーバー` |
-| 14 | エクステンションバーホルダー | Snap-on 305ASX | エクステンションバー | 販売中 | 8 | `snapon-extension-bar-12-7sq` | `エクステンションバー/12.7sq` |
-| 15 | エクステンションバーホルダー | Snap-on 106BTMX / 106ATMXW / 106ATMXWP | エクステンションバー | 販売中 | 8 | `snapon-extension-bar-6-3sq` | `エクステンションバー/6.3sq` |
-| 16 | エクステンションバーホルダー イエロー | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-yellow` | `エクステンションバー/9.5sq/イエロー` |
-| 17 | エクステンションバーホルダー オレンジ | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-orange` | `エクステンションバー/9.5sq/オレンジ` |
-| 18 | エクステンションバーホルダー グリーン | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-green` | `エクステンションバー/9.5sq/グリーン` |
-| 19 | エクステンションバーホルダー パープル | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-purple` | `エクステンションバー/9.5sq/パープル` |
-| 20 | エクステンションバーホルダー ブラック | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 3 | `snapon-extension-bar-9-5sq-black` | `エクステンションバー/9.5sq/ブラック` |
-| 21 | エクステンションバーホルダー レッド | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 5 | `snapon-extension-bar-9-5sq-red` | `エクステンションバー/9.5sq/レッド` |
-| 22 | ロッキングエクステンションバーホルダー | Snap-on 203FXWKL | エクステンションバー | 販売中 | 7 | `snapon-extension-bar-9-5sq-locking` | `エクステンションバー/9.5sq/locking` |
+| 14 | エクステンションバーホルダー 1/2 | Snap-on 305ASX | エクステンションバー | 販売中 | 8 | `snapon-extension-bar-12-7sq` | `エクステンションバー/12.7sq` |
+| 15 | エクステンションバーホルダー 1/4 | Snap-on 106BTMX / 106ATMXW / 106ATMXWP | エクステンションバー | 販売中 | 8 | `snapon-extension-bar-6-3sq` | `エクステンションバー/6.3sq` |
+| 16 | エクステンションバーホルダー 3/8 イエロー | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-yellow` | `エクステンションバー/9.5sq/イエロー` |
+| 17 | エクステンションバーホルダー 3/8 オレンジ | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-orange` | `エクステンションバー/9.5sq/オレンジ` |
+| 18 | エクステンションバーホルダー 3/8 グリーン | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-green` | `エクステンションバー/9.5sq/グリーン` |
+| 19 | エクステンションバーホルダー 3/8 パープル | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 4 | `snapon-extension-bar-9-5sq-purple` | `エクステンションバー/9.5sq/パープル` |
+| 20 | エクステンションバーホルダー 3/8 ブラック | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 3 | `snapon-extension-bar-9-5sq-black` | `エクステンションバー/9.5sq/ブラック` |
+| 21 | エクステンションバーホルダー 3/8 レッド | Snap-on 206AFX / 206AFXW / 206AFXWP | エクステンションバー | 販売中 | 5 | `snapon-extension-bar-9-5sq-red` | `エクステンションバー/9.5sq/レッド` |
+| 22 | ロッキングエクステンションバーホルダー 3/8 | Snap-on 203FXWKL | エクステンションバー | 販売中 | 7 | `snapon-extension-bar-9-5sq-locking` | `エクステンションバー/9.5sq/locking` |
 | 23 | ソケットホルダー 3/8 | Snap-on 212SFSMY / 212FSMSY / 212FSMY / 212YSFSMY / 212YFSMSY / 212YFSMY | ソケット | 販売中 | 4 | `snapon-socket-holder-212fsmy` | `スナップオン＿ソケットホルダー/212FSMY` |
 | 24 | ソケットホルダー 3/8 セミディープ | Snap-on 212SFSMY / 212FSMSY / 212FSMY / 212YSFSMY / 212YFSMSY / 212YFSMY | ソケット | 販売中 | 5 | `snapon-socket-holder-212fsmsy` | `スナップオン＿ソケットホルダー/212FSMSY` |
 | 25 | ソケットホルダー 台形タイプ | Snap-on 212SFSMY / 212FSMSY / 212FSMY / 212YSFSMY / 212YFSMSY / 212YFSMY | ソケット | 販売中 | 5 | `snapon-socket-holder-fdx-212yfsmy` | `スナップオン＿ソケットホルダー/FDX_212YFSMY` |
