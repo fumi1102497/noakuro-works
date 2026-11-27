@@ -532,7 +532,7 @@ const WORKS = [
     status: "販売中",
     target: "Snap-on デジタルトルクレンチ ATECH2N100VB / ATECH3N250VB",
     summary: "デジタルトルクレンチを寝かせて置くスタンドです。",
-    specs: ["寝かせて置くタイプ"],
+    specs: ["寝かせて置くタイプ", "全長 330 / 555mm 対応"],
     image: "images/snapon-digital-torque-wrench/01.webp",
     thumb: "images/snapon-digital-torque-wrench/01-t.webp",
     images: ["images/snapon-digital-torque-wrench/01.webp", "images/snapon-digital-torque-wrench/02.webp", "images/snapon-digital-torque-wrench/03.webp", "images/snapon-digital-torque-wrench/04.webp", "images/snapon-digital-torque-wrench/05.webp", "images/snapon-digital-torque-wrench/06.webp"],
